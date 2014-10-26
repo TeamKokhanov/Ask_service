@@ -4,12 +4,12 @@ using System.Runtime.InteropServices;
 
 // Управление общими сведениями о сборке осуществляется с помощью 
 // набора атрибутов. Измените значения этих атрибутов для изменения сведений,
-// связанных с этой сборкой.
-[assembly: AssemblyTitle("stesnyashki")]
+// общие сведения об этой сборке.
+[assembly: AssemblyTitle("Stesnyashki")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("stesnyashki")]
+[assembly: AssemblyProduct("Stesnyashki")]
 [assembly: AssemblyCopyright("© , 2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -19,8 +19,8 @@ using System.Runtime.InteropServices;
 // COM, задайте атрибуту ComVisible значение true для требуемого типа.
 [assembly: ComVisible(false)]
 
-// Следующий GUID служит для идентификации библиотеки типов typelib, если этот проект видим для COM
-[assembly: Guid("fc745aad-c2c7-4735-90d1-a481c9ee64b7")]
+// Следующий GUID служит для ID-идентификации библиотеки типов, если этот проект видим для COM
+[assembly: Guid("ba3989a3-db46-4e14-87c4-4ecc9d1d7eaa")]
 
 // Сведения о версии сборки состоят из указанных ниже четырех значений:
 //

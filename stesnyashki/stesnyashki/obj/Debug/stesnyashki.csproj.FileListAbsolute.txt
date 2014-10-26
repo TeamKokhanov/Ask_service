@@ -1,5 +1,0 @@
-C:\Users\Дмитрий\Documents\GitHub\Ask_service\stesnyashki\stesnyashki\bin\stesnyashki.dll.config
-C:\Users\Дмитрий\Documents\GitHub\Ask_service\stesnyashki\stesnyashki\bin\stesnyashki.dll
-C:\Users\Дмитрий\Documents\GitHub\Ask_service\stesnyashki\stesnyashki\bin\stesnyashki.pdb
-C:\Users\Дмитрий\Documents\GitHub\Ask_service\stesnyashki\stesnyashki\obj\Debug\stesnyashki.dll
-C:\Users\Дмитрий\Documents\GitHub\Ask_service\stesnyashki\stesnyashki\obj\Debug\stesnyashki.pdb

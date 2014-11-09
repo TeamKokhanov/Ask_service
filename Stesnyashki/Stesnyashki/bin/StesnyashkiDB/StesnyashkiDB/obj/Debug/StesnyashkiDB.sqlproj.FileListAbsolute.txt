@@ -1,5 +1,0 @@
-F:\git_sanya\Ask_service\Stesnyashki\Stesnyashki\bin\StesnyashkiDB\StesnyashkiDB\bin\Debug\StesnyashkiDB.dacpac
-F:\git_sanya\Ask_service\Stesnyashki\Stesnyashki\bin\StesnyashkiDB\StesnyashkiDB\bin\Debug\StesnyashkiDB.dll
-F:\git_sanya\Ask_service\Stesnyashki\Stesnyashki\bin\StesnyashkiDB\StesnyashkiDB\bin\Debug\StesnyashkiDB.pdb
-F:\git_sanya\Ask_service\Stesnyashki\Stesnyashki\bin\StesnyashkiDB\StesnyashkiDB\obj\Debug\StesnyashkiDB.dll
-F:\git_sanya\Ask_service\Stesnyashki\Stesnyashki\bin\StesnyashkiDB\StesnyashkiDB\obj\Debug\StesnyashkiDB.pdb

@@ -1,0 +1,2 @@
+<script src="//ulogin.ru/js/ulogin.js"></script>
+<div id="uLogin" data-ulogin="display=panel;fields=first_name,last_name;providers=vkontakte,facebook;hidden=;redirect_uri=http%3A%2F%2Fstesnyashki.com"></div>

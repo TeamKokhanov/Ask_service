@@ -1,0 +1,193 @@
+﻿body {  
+   
+}
+.backbody {
+     background: -webkit-linear-gradient(top, #d65c5c, #1a82f7);    
+     -webkit-background-size: cover;
+     background-repeat:no-repeat;
+
+}
+
+.titlediv{
+    background-color:#50b6e2;
+    height:10%;   
+    width:100%;
+    margin-left:2%;
+}
+
+.table1{
+    margin-left:2%;
+    width:100%;
+}
+#leftal{
+    text-align:right;
+}
+
+.td1 {
+    width:20%;
+}
+.td2{
+    width:80%;
+}
+span{
+    margin:1%;
+}
+
+.textboxst{
+    border-radius:3px;
+    outline: 0;
+}
+
+.loginbutton{
+    border-radius:10px;
+    background-color:#3a8ec7;
+     outline: 0;
+     margin-right:3%;
+}
+.check{    
+    color:black;
+    margin-right:10%;
+}
+
+.regdiv{
+     border-radius:25px;
+     background-color:#f7dcf2;
+     height:70%;
+     width:30%;
+     background-size:contain;
+     margin-left:65%;
+     margin-top:5%;
+}
+
+.icovk{
+    background-image:url(../Content/icon/vk.png);
+    width:100%;
+    height:100%;
+     outline: 0;
+     border-radius:10px;
+     background-position:center;
+}
+.icofb{
+     background-image:url(../Content/icon/fb.png);
+    width:100%;
+    height:100%;
+     outline: 0;
+     border-radius:10px;
+     background-position:center;
+}
+.icotw{
+     background-image:url(../Content/icon/tw.png);
+    width:100%;
+    height:100%;
+     outline: 0;
+     border-radius:10px;
+     background-position:center;
+}
+.icoms{
+     background-image:url(../Content/icon/ms.png);
+    width:100%;
+    height:100%;
+     outline: 0;
+     border-radius:10px;
+     background-position:center;
+}
+.tdatt {
+    width:128px;
+    height:128px;
+}
+.regbutton {
+    background-color:#0eb70d;
+    border-radius:20px;
+    outline:0px;
+    width:80%;
+    height:50%;
+}
+    .regbutton:hover {
+        padding:2px;
+        border:2px;
+        border-color:#1c9804;
+    }
+.divcenter {
+    text-align:center;
+    height:50%;
+}
+
+.ribbon {
+   width: 344px;
+   position: absolute;
+   text-align: center;
+   font-size: 23px!important;
+   background: #4c83d4;
+   background: -webkit-gradient(linear, left top, left bottom, from(#4c83d4), to(#2cab6e));
+   background: -webkit-linear-gradient(top, #4c83d4, #2cab6e);
+   background: -moz-linear-gradient(top, #4c83d4, #2cab6e);
+   background: -ms-linear-gradient(top, #4c83d4, #2cab6e);
+   background: -o-linear-gradient(top, #4c83d4, #2cab6e);
+   background-image: -ms-linear-gradient(top, #4c83d4 0%, #2cab6e 100%);
+   -webkit-box-shadow: rgba(000,000,000,0.3) 0 1px 1px;
+   -moz-box-shadow: rgba(000,000,000,0.3) 0 1px 1px;
+   box-shadow: rgba(000,000,000,0.3) 0 1px 1px;
+   font-family: 'Helvetica Neue',Helvetica, sans-serif;
+   }
+.ribbon h1 {
+   font-size: 27px!important;
+   color: #801111;
+   text-shadow: #d65c5c 0 1px 0;
+   margin:0px;
+   padding: 10px 10px;
+   }
+.ribbon:before, .ribbon:after {
+   content: '';
+   position: absolute;
+   display: block;
+   bottom: -1em;
+   border: 1.5em solid #5159f5;
+   z-index: -1;
+   }
+.ribbon:before {
+   left: -2em;
+   border-right-width: 1.5em;
+   border-left-color: transparent;
+   -webkit-box-shadow: rgba(000,000,000,0.4) 1px 1px 1px;
+   -moz-box-shadow: rgba(000,000,000,0.4) 1px 1px 1px;
+   box-shadow: rgba(000,000,000,0.4) 1px 1px 1px;
+   }
+.ribbon:after {
+   right: -2em;
+   border-left-width: 1.5em;
+   border-right-color: transparent;
+   -webkit-box-shadow: rgba(000,000,000,0.4) -1px 1px 1px;
+   -moz-box-shadow: rgba(000,000,000,0.4) -1px 1px 1px;
+   box-shadow: rgba(000,000,000,0.4) -1px 1px 1px;
+   }
+.ribbon .ribbon-content:before, .ribbon .ribbon-content:after {
+   border-color: #3a8ec7 transparent transparent transparent;
+   position: absolute;
+   display: block;
+   border-style: solid;
+   bottom: -1em;
+   content: '';
+   }
+.ribbon .ribbon-content:before {
+   left: 0;
+   border-width: 1em 0 0 1em;
+   }
+.ribbon .ribbon-content:after {
+   right: 0;
+   border-width: 1em 1em 0 0;
+   }
+.ribbon-stitches-top {
+   margin-top:2px;
+   border-top: 1px dashed rgba(0, 0, 0, 0.2);
+   -moz-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+   -webkit-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+   box-shadow: 0px 0px 2px rgba(255, 255, 255, 0.5);
+   }
+.ribbon-stitches-bottom {
+   margin-bottom:2px;
+   border-top: 1px dashed rgba(0, 0, 0, 0.2);
+   -moz-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
+   -webkit-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
+   box-shadow: 0px 0px 2px rgba(255, 255, 255, 0.3);
+   }
+

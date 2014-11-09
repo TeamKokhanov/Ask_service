@@ -147,6 +147,10 @@
     <Compile Include="registration\registnewuser.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\HomeStyle.css" />
+    <Content Include="Content\icon\fb.png" />
+    <Content Include="Content\icon\ms.png" />
+    <Content Include="Content\icon\tw.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -174,6 +178,7 @@
     <Content Include="Content\themes\base\jquery.ui.slider.css" />
     <Content Include="Content\themes\base\jquery.ui.tabs.css" />
     <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\icon\vk.png" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <None Include="Scripts\jquery-1.6.2-vsdoc.js" />

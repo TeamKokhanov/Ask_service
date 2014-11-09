@@ -1,6 +1,109 @@
 ﻿@{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Stesnyashki";
 
 }
+@model IList<Stesnyashki.Models.StatisticInformtion>
 
-<h2>Index</h2>
+<head>
+    <title>Stesnyashki</title>
+    <link rel="stylesheet" type="text/css" href="~/Content/HomeStyle.css">
+</head>
+<body class="backbody">
+    <div>
+        <table class="table1">
+            <tr>
+                <td class="td1" rowspan="2">
+                    <div class="ribbon"><div class="ribbon-stitches-top"></div><strong class="ribbon-content"><h1>Stesnyaski</h1></strong><div class="ribbon-stitches-bottom"></div></div>
+                </td>
+                <td class="td2">
+                    <div id="leftal">
+                        <form action="~/Views/Home/Index.cshtml">
+                       <span> <input class="textboxst" type="text" name="email" value="email"></span>
+                        <span><input class="textboxst" type="password" value="password"></span>
+                        <span><input class="loginbutton" type="submit" name="login" value="Log in"></span><br />
+                        
+                            </form>
+                    </div>
+                </td>                
+            </tr>
+            <tr>
+                <td>
+                    <div id="leftal" class="check">
+                    <span><input id="leftal" type="checkbox" name="remembercheckbox" value="remember"><a>Remember</a></span>
+                        </div>
+                </td>
+            </tr>           
+        </table>
+    </div>
+    <div>
+        <div class="regdiv">
+            <form>
+                <table>
+                    <tr>
+                        <td>
+                <h2>Don't have an account?</h2>
+                        </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Name</p>
+                            </td>
+                            <td>
+                                <input type="text" name="regnametext">
+                            </td>
+                        </tr>
+                    <tr>
+                        <td>
+                            <p>E-mail</p>
+                        </td>
+                        <td>
+                            <input type="text" name="regemailtext" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Password</p>
+                        </td>
+                        <td>
+                            <input type="password" name="regpassword" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Confirm password</p>
+                        </td>
+                        <td>
+                            <input type="password" name="regconfpassword" />
+                        </td>
+                    </tr>              
+                    </table>
+                <table>
+                    <tr>
+                        <td>
+                            <p>Attach:</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tdatt">
+                            <button class="icovk" type="button" name="attvk"></button>
+                        </td>
+                        <td class="tdatt">
+                            <input class="icofb" type="button" name="attfb">
+                        </td>
+                        <td class="tdatt">
+                            <input class="icotw" type="button" name="atttv">
+                        </td>
+                        <td class="tdatt">
+                            <input class="icoms" type="button" name="attms">
+                        </td>
+                    </tr>
+                </table>
+            </form> 
+            <div class="divcenter">
+                <input class="regbutton" type="submit" name="registration" value="@{Random r = new Random(); int i = r.Next();}Registration" />
+            </div>
+            
+        </div>
+    </div>
+    
+</body>

@@ -8,7 +8,7 @@ using System.Data;
 
 
 
-namespace Stesnyashki.browsing
+namespace stesnyashki
 {
     public class LookPage//просмотр страницы зарегистрированного пользователя
     {
@@ -18,16 +18,20 @@ namespace Stesnyashki.browsing
             conn.Open();
            try
             {
-                 SqlCommand cmd = new SqlCommand("Update Users" +
-                     " Set name = @Name, surname=@Sername, age=@Age, sex=@Gender, country=@Country where id = @Id ", conn);
-           // SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM Users WHERE  (@Name LIKE'%" + Name.Text + "%') AND (@Surname LIKE'%" + Surname.Text + "%') ", conn);
+               
+               SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM Users WHERE  (Users.id LIKE'%" + Convert.ToInt32(id.Text) + "%') ", conn);
                 DataTable dataTable = new DataTable();
-               // dataAdapter.Fill(dataTable);
-               // UserListInfo.DataSource = dataTable;
+                dataAdapter.Fill(dataTable);
+                  name.Text = dataTable.Rows[1];
+                  surname.Text = dataTable.Rows[2];
+                  age.Text = dataTable.Rows[3];
+                  sex.Text = dataTable.Rows[4];
+                  country.Text = dataTable.Rows[5];
+              
            }
            catch (Exception ex)
            {
-              
+          
            }
            finally
            {

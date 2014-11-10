@@ -6,7 +6,7 @@ using System.Data.OleDb;
 using System.Data.SqlClient;
 using System.Data;
 
-namespace Stesnyashki.browsing
+namespace stesnyashki
 {
     public class Lookatwall//просмотр страницы пользователя
     {
@@ -16,12 +16,11 @@ namespace Stesnyashki.browsing
             conn.Open();
             try
                {
-                 SqlCommand cmd = new SqlCommand("Update Users" +
-                     " Set name = @Name, surname=@Sername, age=@Age, sex=@Gender, country=@Country where id = @Id ", conn);
-           // SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM Question,Users WHERE Question.id = Users.question_id (@Name LIKE'%" + Name.Text + "%') AND (@Surname LIKE'%" + Surname.Text + "%') ", conn);//выбор инфы по вопросам
+          
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM Question,Users WHERE Question.id = Users.question_id (@Name LIKE'%" + Name.Text + "%') AND (@Surname LIKE'%" + Surname.Text + "%') ", conn);//выбор инфы по вопросам
                 DataTable dataTable = new DataTable();
-             //   dataAdapter.Fill(dataTable);//создаем таблицу
-               // WallinfoList.DataSource = dataTable;//вывод в виде таблицы потом в List(need interface) 
+              dataAdapter.Fill(dataTable);//создаем таблицу
+               WallinfoList.DataSource = dataTable;//вывод в виде таблицы потом в List(need interface) 
            }
            catch (Exception ex)
            {

@@ -19,14 +19,14 @@ namespace stesnyashki
            try
             {
                
-               SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM Users WHERE  (Users.id LIKE'%" + Convert.ToInt32(id.Text) + "%') ", conn);
+             /*  SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM Users WHERE  (Users.id LIKE'%" + Convert.ToInt32(id.Text) + "%') ", conn);
                 DataTable dataTable = new DataTable();
                 dataAdapter.Fill(dataTable);
                   name.Text = dataTable.Rows[1];
                   surname.Text = dataTable.Rows[2];
                   age.Text = dataTable.Rows[3];
                   sex.Text = dataTable.Rows[4];
-                  country.Text = dataTable.Rows[5];
+                  country.Text = dataTable.Rows[5];*/
               
            }
            catch (Exception ex)

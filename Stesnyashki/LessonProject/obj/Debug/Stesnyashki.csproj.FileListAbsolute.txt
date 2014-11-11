@@ -30,3 +30,9 @@ C:\Users\Дмитрий\Documents\GitHub\Ask_service\Stesnyashki\LessonProject\b
 C:\Users\Дмитрий\Documents\GitHub\Ask_service\Stesnyashki\LessonProject\obj\Debug\Stesnyashki.csprojResolveAssemblyReference.cache
 C:\Users\Дмитрий\Documents\GitHub\Ask_service\Stesnyashki\LessonProject\obj\Debug\Lesson1.dll
 C:\Users\Дмитрий\Documents\GitHub\Ask_service\Stesnyashki\LessonProject\obj\Debug\Lesson1.pdb
+C:\Users\Дмитрий\Documents\GitHub\Ask_service\Stesnyashki\LessonProject\bin\System.Net.Http.Formatting.dll
+C:\Users\Дмитрий\Documents\GitHub\Ask_service\Stesnyashki\LessonProject\bin\System.Web.Http.dll
+C:\Users\Дмитрий\Documents\GitHub\Ask_service\Stesnyashki\LessonProject\bin\System.Web.Http.WebHost.dll
+C:\Users\Дмитрий\Documents\GitHub\Ask_service\Stesnyashki\LessonProject\bin\System.Net.Http.Formatting.xml
+C:\Users\Дмитрий\Documents\GitHub\Ask_service\Stesnyashki\LessonProject\bin\System.Web.Http.xml
+C:\Users\Дмитрий\Documents\GitHub\Ask_service\Stesnyashki\LessonProject\bin\System.Web.Http.WebHost.xml

@@ -17,10 +17,10 @@ namespace stesnyashki
             try
                {
           
-            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM Question,Users WHERE Question.id = Users.question_id (@Name LIKE'%" + Name.Text + "%') AND (@Surname LIKE'%" + Surname.Text + "%') ", conn);//выбор инфы по вопросам
+           // SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM Question,Users WHERE Question.id = Users.question_id (@Name LIKE'%" + Name.Text + "%') AND (@Surname LIKE'%" + Surname.Text + "%') ", conn);//выбор инфы по вопросам
                 DataTable dataTable = new DataTable();
-              dataAdapter.Fill(dataTable);//создаем таблицу
-               WallinfoList.DataSource = dataTable;//вывод в виде таблицы потом в List(need interface) 
+           //   dataAdapter.Fill(dataTable);//создаем таблицу
+           //    WallinfoList.DataSource = dataTable;//вывод в виде таблицы потом в List(need interface) 
            }
            catch (Exception ex)
            {

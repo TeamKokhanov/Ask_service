@@ -12,7 +12,7 @@ namespace Lesson1.communication
     {
         private void CommentButton_Click(object sender, EventArgs e)
         {
-            CommentList.Visible = true;
+           // CommentList.Visible = true;
         }
     }
 }

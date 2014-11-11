@@ -4,6 +4,6 @@
     [idQuestion] INT NOT NULL, 
     [text] NVARCHAR(MAX) NOT NULL, 
     [date] DATETIME NOT NULL, 
-    [likes] NCHAR(10) NULL, 
+    [likes] INT NOT NULL DEFAULT 0, 
     [idSender] INT NOT NULL
 )

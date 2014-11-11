@@ -135,13 +135,18 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="communication\Comment.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="browsing\Lookatwall.cs" />
     <Compile Include="browsing\LookPage.cs" />
-    <Compile Include="Models\FriendList.cs" />
-    <Compile Include="Models\StatisticInformtion.cs" />
+    <Compile Include="Models\Comment.cs" />
+    <Compile Include="FriendList.cs" />
+    <Compile Include="Models\Like.cs" />
+    <Compile Include="Models\Question.cs" />
+    <Compile Include="StatisticInformtion.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="communication\questionSender.cs" />
     <Compile Include="registration\personalinfo.cs" />
@@ -221,6 +226,7 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\User\User.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

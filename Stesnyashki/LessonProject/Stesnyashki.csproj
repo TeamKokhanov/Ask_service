@@ -128,6 +128,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="browsing\CommentAnswer.cs" />
     <Compile Include="browsing\Likecontrol.cs" />
     <Compile Include="communication\answerSender.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />

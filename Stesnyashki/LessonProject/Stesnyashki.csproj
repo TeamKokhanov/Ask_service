@@ -148,6 +148,7 @@
     <Compile Include="FriendList.cs" />
     <Compile Include="Models\Like.cs" />
     <Compile Include="Models\Question.cs" />
+    <Compile Include="Models\ShyMeContext.cs" />
     <Compile Include="StatisticInformtion.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -157,6 +158,10 @@
     <Compile Include="workwithpp\Personalpageupdate.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\ShyMeDB.mdf" />
+    <Content Include="App_Data\ShyMeDB_log.ldf">
+      <DependentUpon>ShyMeDB.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\HomeStyle.css" />
     <Content Include="Content\icon\fb.png" />
     <Content Include="Content\icon\ms.png" />
@@ -231,9 +236,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\User\User.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>

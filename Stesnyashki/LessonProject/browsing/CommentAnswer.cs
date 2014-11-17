@@ -6,7 +6,7 @@ using System.Data.OleDb;
 using System.Data.SqlClient;
 using System.Data;
 
-namespace Lesson1.browsing
+namespace Stesnyashki.browsing
 {
     public class CommentAnswer
     {

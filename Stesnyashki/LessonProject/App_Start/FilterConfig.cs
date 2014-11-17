@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace Lesson1
+namespace Stesnyashki
 {
     public class FilterConfig
     {

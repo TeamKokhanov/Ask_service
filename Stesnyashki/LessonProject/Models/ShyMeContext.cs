@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Data.Entity;
 
-namespace Lesson1.Models
+namespace Stesnyashki.Models
 {
     public class ShyMeContext : DbContext
     {

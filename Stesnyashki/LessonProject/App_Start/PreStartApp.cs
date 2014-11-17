@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Lesson1.App_Start;
+using Stesnyashki.App_Start;
 
 [assembly: WebActivator.PreApplicationStartMethod(typeof(PreStartApp), "Start")]
-namespace Lesson1.App_Start
+namespace Stesnyashki.App_Start
 {
     public static class PreStartApp
     {

@@ -1,0 +1,2 @@
+2014-11-17 18:14:44.3994|INFO|Lesson1.App_Start.PreStartApp|Application PreStart
+2014-11-17 20:42:45.3327|INFO|Lesson1.App_Start.PreStartApp|Application PreStart

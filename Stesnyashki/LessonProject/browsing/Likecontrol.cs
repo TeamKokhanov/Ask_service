@@ -5,7 +5,7 @@ using System.Web;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace Lesson1.browsing
+namespace Stesnyashki.browsing
 {
     public class Likecontrol
     {

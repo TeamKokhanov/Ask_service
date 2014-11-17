@@ -6,7 +6,7 @@ using System.Data.OleDb;
 using System.Data.SqlClient;
 using System.Data;
 
-namespace stesnyashki
+namespace Stesnyashki
 {
     public class personalinfo //класс добавления личных данных имя, фамилия, возраст, пол
     {

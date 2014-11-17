@@ -6,7 +6,7 @@ using System.Data.OleDb;
 using System.Data.SqlClient;
 using System.Data;
 
-namespace stesnyashki
+namespace Stesnyashki
 {
     public class Personalpageupdate
     {

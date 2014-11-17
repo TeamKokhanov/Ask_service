@@ -8,7 +8,7 @@ using System.Data;
 
 
 
-namespace stesnyashki
+namespace Stesnyashki
 {
     public class LookPage//просмотр страницы зарегистрированного пользователя
     {

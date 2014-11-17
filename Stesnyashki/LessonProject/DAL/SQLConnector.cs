@@ -6,7 +6,7 @@ using System.Linq;
 using System.Data.SqlClient;
 using System.Data;
 
-namespace Lesson1.DAL
+namespace Stesnyashki.DAL
 {
     public class SQLConnector
     {

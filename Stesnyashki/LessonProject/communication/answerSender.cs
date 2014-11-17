@@ -6,7 +6,7 @@
 	using System.Data.SqlClient;
 	using System.Data;
 	
-	namespace stesnyashki
+	namespace Stesnyashki
 	{
 	    public class answerSender //this class adds an answer to a concrete question
 	    {

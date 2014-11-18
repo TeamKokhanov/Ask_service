@@ -19,6 +19,10 @@ namespace Stesnyashki.Models
 
         public string aText { get; set; }
 
+        public DateTime aDate { get; set; }
+
         public int like { get; set; }
+
+        public bool anonymus { get; set; }
     }
 }

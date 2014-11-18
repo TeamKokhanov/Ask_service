@@ -136,6 +136,7 @@
     <Compile Include="App_Start\PreStartApp.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="communication\Comment.cs" />
+    <Compile Include="communication\Sender.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="DAL\SQLConnector.cs" />
@@ -152,7 +153,6 @@
     <Compile Include="StatisticInformtion.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="communication\questionSender.cs" />
     <Compile Include="registration\personalinfo.cs" />
     <Compile Include="registration\registnewuser.cs" />
     <Compile Include="workwithpp\Personalpageupdate.cs" />

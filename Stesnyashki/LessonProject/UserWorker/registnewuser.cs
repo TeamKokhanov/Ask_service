@@ -8,7 +8,7 @@ using System.Data;
 using Stesnyashki.Models;
 using Stesnyashki.DAL;
 
-namespace Stesnyashki
+namespace Stesnyashki.UserWorker
 {
     public class registnewuser //класс регистрации
     {      

@@ -26,5 +26,8 @@ namespace Stesnyashki.Models
         public List<int> friendlist { get; set; }
 
         public List<int> followlist { get; set; }
+        public string avatar { get; set; }
+        public string backgroundImage { get; set; }
+        public bool isDataOpened { get; set; }
     }
 }

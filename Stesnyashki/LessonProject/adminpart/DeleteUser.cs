@@ -18,6 +18,9 @@ namespace Lesson1.adminpart
                 SqlCommand del = new SqlCommand("DELETE FROM [Users] Where Users.id = @id", conn);
                 del.Parameters.AddWithValue("@id", userId);
                 del.ExecuteNonQuery();
+                SqlCommand del1 = new SqlCommand("DELETE FROM [Questions] Where Qustions.idReciever = @id", conn);
+                del1.Parameters.AddWithValue("@id", userId);
+                del1.ExecuteNonQuery();
             }
             conn.Close();
         }

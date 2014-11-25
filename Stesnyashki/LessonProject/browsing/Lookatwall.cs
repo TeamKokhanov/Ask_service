@@ -5,6 +5,7 @@ using System.Web;
 using System.Data.OleDb;
 using System.Data.SqlClient;
 using System.Data;
+using Stesnyashki.DAL;
 
 namespace Stesnyashki
 {
@@ -30,6 +31,15 @@ namespace Stesnyashki
            {
                conn.Close();
            }
+        }
+
+        public bool deleteQuestionfromWall(int idAnswer) 
+        {
+            SQLConnector Sq = new SQLConnector();
+            //Sq.Delete("Questions","id",idAnswer);
+            //Sq.Delete("Likes","idQuestion",idAnswer);
+            //Sq.Delete("Comments","idQuestion",idAnswer);
+            return true;
         }
     }
 }

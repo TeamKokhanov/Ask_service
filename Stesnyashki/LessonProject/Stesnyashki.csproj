@@ -138,8 +138,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="communication\Comment.cs" />
     <Compile Include="communication\Sender.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\SHomeController.cs" />
+    <Compile Include="Controllers\SUserController.cs" />
     <Compile Include="DAL\SQLConnector.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -236,8 +236,8 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\User\User.cshtml" />
+    <Content Include="Views\SHome\Index.cshtml" />
+    <Content Include="Views\SUser\User.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -140,6 +140,7 @@
     <Compile Include="communication\Sender.cs" />
     <Compile Include="Controllers\SHomeController.cs" />
     <Compile Include="Controllers\SUserController.cs" />
+    <Compile Include="Controllers\SWallController.cs" />
     <Compile Include="DAL\SQLConnector.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

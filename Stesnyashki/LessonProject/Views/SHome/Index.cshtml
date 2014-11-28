@@ -84,16 +84,30 @@
                     </tr>
                     <tr>
                         <td class="tdatt">
-                            <button class="icovk" type="button" name="attvk"></button>
+                            <script src="//vk.com/js/api/openapi.js" type="text/javascript"></script>
+
+                            <div id="login_button" onclick="VK.Auth.login(authInfo);"></div>
+
+                            <script language="javascript">
+                                VK.init({
+                                    apiId: 4649158
+                                });
+                                function authInfo(response) {
+                                    //if (response.session) {
+                                    //    alert('user: ' + response.session.mid);
+                                    //} else {
+                                    //    alert('not auth');
+                                    //}
+                                }
+                                VK.Auth.getLoginStatus(authInfo);
+                                VK.UI.button('login_button');
+                            </script>
                         </td>
+                    </tr>
+                    <tr>
                         <td class="tdatt">
-                            <input class="icofb" type="button" name="attfb">
-                        </td>
-                        <td class="tdatt">
-                            <input class="icotw" type="button" name="atttv">
-                        </td>
-                        <td class="tdatt">
-                            <input class="icoms" type="button" name="attms">
+                            <script src="//ulogin.ru/js/ulogin.js"></script>
+                            <div id="uLogin" data-ulogin="display=panel;fields=first_name,last_name;providers=vkontakte,facebook,twitter,google;hidden=;redirect_uri=http%3A%2F%2F"></div>
                         </td>
                     </tr>
                 </table>

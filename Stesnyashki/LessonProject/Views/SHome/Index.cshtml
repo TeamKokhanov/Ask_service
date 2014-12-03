@@ -2,7 +2,7 @@
     ViewBag.Title = "Stesnyashki";
 
 }
-@Model Stesnyashki.Models.User;
+
 
 <head>
     <title>Stesnyashki</title>
@@ -117,5 +117,7 @@
             </form>
         </div>
     </div>
-
+    <form action="/SQuestionList/QuestionList" method="post">        
+        <span><input class="loginbutton" type="submit" name="login" value="Log in"></span><br />
+    </form>
 </body>

@@ -5,6 +5,8 @@ using System.Web;
 using Stesnyashki.Models;
 using Stesnyashki.DAL;
 using System.Data;
+using System.Web;
+using System.Web.Mvc;
 
 namespace Stesnyashki.Questions
 {
@@ -18,13 +20,19 @@ namespace Stesnyashki.Questions
             List<int> idSender = QuestionList.AsEnumerable().Select(r => r.Field<int>("idSender")).ToList();
             List<string> qText = QuestionList.AsEnumerable().Select(r => r.Field<string>("qText")).ToList();
             List<DateTime> qDate = QuestionList.AsEnumerable().Select(r => r.Field<DateTime>("qDate")).ToList();
+            List<string> aText = QuestionList.AsEnumerable().Select(r => r.Field<string>("aText")).ToList();
             List<int> id = QuestionList.AsEnumerable().Select(r => r.Field<int>("id")).ToList();
             int j = 0;
             List<Question> QuestionsList = new List<Question>();
+            int count = 0;
             foreach (var i in qText) 
             {
-                Question q = new Question { id = id[j], idSender = idSender[j], idResiver = idReciever, qText = i, qDate = qDate[j] };
-                QuestionsList.Add(q);
+                if (aText[count] == null)
+                {
+                    Question q = new Question { id = id[j], idSender = idSender[j], idResiver = idReciever, qText = i, qDate = qDate[j] };
+                    QuestionsList.Add(q);
+                }
+                count++;
             }
             return QuestionsList;
         }

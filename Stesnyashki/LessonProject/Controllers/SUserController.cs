@@ -22,7 +22,7 @@ namespace Stesnyashki.Controllers
         {
             ViewBag.username = email;
             ViewBag.pass = password;
-            return View("User");
+            return View("User");//!!!!!!!!!!!!!!!!!!!!!!!!!!! Ichange from "User" to "SQuestion"
         }
 
         [HttpPost]

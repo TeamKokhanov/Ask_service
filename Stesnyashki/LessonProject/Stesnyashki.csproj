@@ -207,8 +207,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\PreStartApp.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="communication\Comment.cs" />
     <Compile Include="communication\Sender.cs" />
+    <Compile Include="Controllers\SQuestionListController.cs" />
     <Compile Include="Controllers\SHomeController.cs" />
     <Compile Include="Controllers\SUserController.cs" />
     <Compile Include="Controllers\SWallController.cs" />
@@ -310,6 +310,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\SHome\Index.cshtml" />
     <Content Include="Views\SUser\User.cshtml" />
+    <Content Include="Views\SQuestionList\SQuestion.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

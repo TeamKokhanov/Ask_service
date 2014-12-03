@@ -1,0 +1,9 @@
+﻿@{
+    ViewBag.Title = "SQuestion";
+}
+
+<h2>SQuestion</h2>
+@foreach (Stesnyashki.Models.Question b in ViewBag.Question)
+{
+    <li>@b.qText</li>
+} 

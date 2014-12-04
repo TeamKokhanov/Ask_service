@@ -29,7 +29,7 @@ namespace Stesnyashki.Questions
             {
                 if (aText[count] == null)
                 {
-                    Question q = new Question { id = id[j], idSender = idSender[j], idResiver = idReciever, qText = i, qDate = qDate[j] };
+                    Question q = new Question { id = id[j], idSender = idSender[j], idReciever = idReciever, qText = i, qDate = qDate[j] };
                     QuestionsList.Add(q);
                 }
                 count++;

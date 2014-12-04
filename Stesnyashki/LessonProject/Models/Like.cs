@@ -12,5 +12,7 @@ namespace Stesnyashki.Models
         public int idComment { get; set; }
 
         public int idUser { get; set; }
+
+        public int id { get; set; }
     }
 }

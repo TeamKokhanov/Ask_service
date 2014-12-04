@@ -11,7 +11,7 @@ namespace Stesnyashki.Models
 
         public int idSender { get; set; }
 
-        public int idResiver { get; set; }
+        public int idReciever { get; set; }
 
         public string qText { get; set; }
 
@@ -21,7 +21,7 @@ namespace Stesnyashki.Models
 
         public DateTime aDate { get; set; }
 
-        public int like { get; set; }
+        public int likes { get; set; }
 
         public bool anonymus { get; set; }
     }

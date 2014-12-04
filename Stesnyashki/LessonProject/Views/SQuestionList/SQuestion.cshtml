@@ -3,7 +3,13 @@
 }
 
 <h2>SQuestion</h2>
-@foreach (Stesnyashki.Models.Question b in ViewBag.Question)
-{
-    <li>@b.qText</li>
-} 
+<div class="divcenter">
+
+    @for (int j = 0; j < ViewBag.Question.Count; j++)
+    {
+        <div class="divcenter">
+            <h1>Sender:@ViewBag.User[j]</h1>            
+            @ViewBag.Question[j].qText
+        </div>
+    }
+</div>

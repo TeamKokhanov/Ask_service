@@ -169,7 +169,7 @@ namespace Stesnyashki.Controllers
 
                     foreach (Question q in Sh.Questions)
                     {
-                        if (q.idResiver == id)
+                        if (q.idReciever == id)
                         {
                             Sh.Questions.Remove(q);
                             Sh.SaveChanges();

@@ -16,7 +16,7 @@ namespace Stesnyashki.communication
                 Question Q = new Question
                 {
                     idSender = idSender,
-                    idResiver = idReciever,
+                    idReciever = idReciever,
                     qText = textquestion,
                     qDate = DateTime.Now
                 };

@@ -3,14 +3,24 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
     <title>@ViewBag.Title</title>
-    @Styles.Render("~/Content/themes/base/css", "~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/style.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Uppanel.css" rel="stylesheet" type="text/css"/>
 </head>
-<body>
-    @RenderBody()
-
-    @Scripts.Render("~/bundles/jquery")
-    @RenderSection("scripts", required: false)
+<body class="maincolor">
+    <div id="hat">
+        <ul>
+            <li><input type="button" onclick="location.href=''" value="Stesnjashki" class="hatButt" /></li>
+            <li><input type="button" onclick="location.href='#'" value="My Wall" class="hatButt" /></li>
+            <li><input type="button" onclick="location.href='#'" value="My Friends" class="hatButt" /></li>
+            <li><input type="button" onclick="location.href='#'" value="My Profile" class="hatButt" /></li>
+            <li><input type="button" onclick="location.href = '/SQuestionList/QuestionList'" formtarget="_blank" data-ga-click="Bootcamp,click" value="My Questions" class="hatButt" /></li>
+            <li><input type="text" name="searchtext" value="Search"></li>
+        </ul>
+    </div>
+    <div class="box">
+        @RenderBody()
+    </div>
 </body>
 </html>

@@ -237,10 +237,23 @@
     <Content Include="App_Data\ShyMeDB_log.ldf">
       <DependentUpon>ShyMeDB.mdf</DependentUpon>
     </Content>
+    <Content Include="Content\background.jpg" />
+    <Content Include="Content\bg.png" />
+    <Content Include="Content\gradient.png" />
     <Content Include="Content\HomeStyle.css" />
+    <Content Include="Content\icon\bg.png" />
+    <Content Include="Content\icon\close-hover.png" />
+    <Content Include="Content\icon\close.png" />
+    <Content Include="Content\icon\divider.png" />
+    <Content Include="Content\icon\envelope-1.png" />
+    <Content Include="Content\icon\envelope-2.png" />
+    <Content Include="Content\icon\envelope.png" />
     <Content Include="Content\icon\fb.png" />
     <Content Include="Content\icon\ms.png" />
     <Content Include="Content\icon\tw.png" />
+    <Content Include="Content\pass-icon.png" />
+    <Content Include="Content\QuestionListStyle.css" />
+    <Content Include="Content\style.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -269,6 +282,8 @@
     <Content Include="Content\themes\base\jquery.ui.tabs.css" />
     <Content Include="Content\themes\base\jquery.ui.theme.css" />
     <Content Include="Content\icon\vk.png" />
+    <Content Include="Content\Uppanel.css" />
+    <Content Include="Content\user-icon.png" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <None Include="Scripts\jquery-1.6.2-vsdoc.js" />
@@ -311,6 +326,7 @@
     <Content Include="Views\SHome\Index.cshtml" />
     <Content Include="Views\SUser\User.cshtml" />
     <Content Include="Views\SQuestionList\SQuestion.cshtml" />
+    <Content Include="Views\Shared\MainLayout.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

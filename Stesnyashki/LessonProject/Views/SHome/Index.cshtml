@@ -8,15 +8,15 @@
     <div class="user-icon"></div>
     <div class="pass-icon"></div>
 
-    <form name="login-form" class="login-form" action="/SQuestionList/Login" method="post">
+    <form name="login-form" class="login-form" action="/SUser/Login" method="post">
 
         <div class="header">
             <h1>Authorisation</h1>
             <span>Enter your registration data to log in and take access to dashboard. </span>
         </div>
-
+        <span>@ViewBag.password</span>
         <div class="content">
-            <input name="login" type="text" class="input username" value="login" onfocus="this.value=''" />
+            <input name="email" type="text" class="input username" value="login" onfocus="this.value=''" />
             <input name="password" type="password" class="input password" value="password" onfocus="this.value=''" />
 
 
@@ -24,15 +24,15 @@
         </div>
 
         <div class="footer">
-            <input type="submit" name="submit" value="LOG IN " class="button" />            
+            <input type="submit" name="submit" value="LOG IN " class="button" />
             @*<input type="button" onclick="location.href='register.htm'" value="Sign up" class="register" />*@
         </div>
 
     </form>
-    <form class="login-form" action="/SQuestionList/QuestionList" method="post">
-    <div class="footer">
-        <input type="submit" value="Sign up" class="register" />
-    </div>
+    <form class="login-form" action="/Personal/PersonalReg" method="post">
+        <div class="footer">
+            <input type="submit" value="Sign up" class="register" />
+        </div>
     </form>
 </div>
 <div class="gradient"></div>

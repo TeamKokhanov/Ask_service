@@ -16,7 +16,7 @@ namespace Stesnyashki
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-           /* routes.MapHttpRoute(
+            /*routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }

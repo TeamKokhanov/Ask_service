@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Stesnyashki.Questions;
 using Stesnyashki.Models;
 using System.Data;
 
@@ -67,18 +66,6 @@ namespace Stesnyashki.Controllers
             return QuestionList();
         }
 
-        [HttpPost]
-        public ActionResult Login(string login, string password)
-        {
-            List<User> U = Sh.Users.Where(u => u.email == login).ToList();
-            foreach (var i in U)
-            {
-                if (i.password == password)
-                {
-                    return QuestionList();
-                }
-            }
-            return View("User");
-        }
+        
     }
 }

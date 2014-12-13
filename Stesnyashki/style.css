@@ -8,7 +8,7 @@ scrollbar-arrow-color: #000000;
 scrollbar-track-color: #000000;
 scrollbar-darkshadow-color: #000000;
     margin: 0 auto; 
-	background: url(background.jpg) no-repeat #01729E;
+	background: url(../images/background.jpg) no-repeat #01729E;\
     -moz-background-size: 100%; /* Firefox 3.6+ */
     -webkit-background-size: 100%; /* Safari 3.1+ è Chrome 4.0+ */
     -o-background-size: 100%; /* Opera 9.6+ */
@@ -18,13 +18,11 @@ scrollbar-darkshadow-color: #000000;
 	text-align: left;
 	text-decoration: none;
 }
-#hat {width:100%; height:10%;  margin-top: 0px; margin:0 auto;}
+#hat {width:90%; height:10%; margin:0 auto; margin-top: 0px;}
 #hat ul li {float:left; width:16%; text-align:center;margin-top: 20px;height:60px;color:white; opacity: 0.9;}
 #hat ul li .hatButt{color:white; font-family: Verdana, Arial, Helvetica, sans-serif; text-decoration: underline; cursor: pointer; font-weight: 300; background: none;	font-size: 18px;}
 #hat ul li .hatButt:hover { font-size: 27px;}
 #hat ul {list-style:none;}
-
-
 
 #friends{	
  font-family: Verdana, Arial, Helvetica, sans-serif; 
@@ -71,8 +69,8 @@ width:90%;
 height: 89%;
 background:url(bg.png);
  border-radius:15px 15px 15px 15px;
- margin-top:5%;
-   margin:0 auto;
+ margin-top:250px;
+  margin: 0 auto;
 }
 .regdiv{
 	 font-family: 'Bree Serif', serif;
@@ -87,15 +85,7 @@ background:url(bg.png);
      width:30%;
      background-size:contain;
      margin: 0 auto;
-     
-}
-.divcentre {
-    
-    margin:0 auto;
-}
-.buttonsavepersonalinfo {
-     margin:0 auto;
-    text-align:center;
+     margin-left:120%;
 }
 .regbutton {
     background-color:#0eb70d;
@@ -154,8 +144,8 @@ background:url(bg.png);
     margin-left:2%;
 	background-attachment: fixed;
      border-radius:5px;
-     height:100%;
-     width:100%;
+     height:70%;
+     width:20%;
      background-size:contain;
 }
 .icovk{

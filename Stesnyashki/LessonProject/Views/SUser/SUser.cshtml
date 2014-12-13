@@ -1,0 +1,126 @@
+﻿@{
+    ViewBag.Title = "User";
+    
+}
+
+
+    <form class="divcentre" action="" method="post">
+        <table class="divcentre">
+            <tr>
+                <td>
+                    <div>
+                        <table>
+                            <tr>
+                                <td>
+                                    <img src="images/avatar.png">
+                                    <p>Load your photo</p>
+                                </td>
+                                <td>
+                                    <input type="text" name="avatartext">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>Mude:</p>
+                                </td>
+                                <td>
+                                    <input type="text" name="mudetext">
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+                <td>
+                    <div>
+
+                        <table>
+                            <tr>
+                                <td>
+                                    <h2>Personal information:</h2>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>Name:</p>
+                                </td>
+                                <td>
+                                    <input type="text" name="nametext">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>Surname:</p>
+                                </td>
+                                <td>
+                                    <input type="text" name="surnametext" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>Age:</p>
+                                </td>
+                                <td>
+                                    <input type="text" name="agetext" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>Sex:</p>
+                                </td>
+                                <td>
+                                    <input type="radio" name="group1" value="Male" checked> Male<br>  <input type="radio" name="group1" value="Female"> Female<br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>E-mail:</p>
+                                </td>
+                                <td>
+                                    <input type="text" name="emailtext" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>Country:</p>
+                                </td>
+                                <td>
+                                    <p><input type="text" name="country" /></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>Password</p>
+                                </td>
+                                <td>
+                                    <input type="password" name="password" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>Privacy</p>
+                                </td>
+                                <td>
+                                    <input type="radio" name="group2" value="Open" checked> Open<br>  <input type="radio" name="group2" value="Close"> Close<br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>Background Image</p>
+                                </td>
+                                <td>
+                                    <input type="text" name="backgroundimage" />
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </td>
+        </table>
+
+
+        <div class="buttonsavepersonalinfo">
+            <input class="regbutton" type="submit" name="Save" value="Save info" />
+        </div>
+    </form>
+  
+

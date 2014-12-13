@@ -29,9 +29,9 @@ namespace Stesnyashki.Controllers
             {
                 foreach (Question q in Sh.Questions)
                 {
-                    if (q.idResiver == id)
+                    if (q.idReciever == id)
                     {
-                        sum += Convert.ToInt32(q.like);
+                        sum += Convert.ToInt32(q.likes);
                     }
 
                 }
@@ -55,7 +55,7 @@ namespace Stesnyashki.Controllers
             {
                 foreach (Question q in Sh.Questions)
                 {
-                    if (q.idResiver == id)
+                    if (q.idReciever == id)
                     {
                         sum++;
                     }
@@ -80,7 +80,7 @@ namespace Stesnyashki.Controllers
             {
                 foreach (Question q in Sh.Questions)
                 {
-                    if (q.idResiver == id && q.aText != null)
+                    if (q.idReciever == id && q.aText != null)
                     {
                         sum++;
                     }

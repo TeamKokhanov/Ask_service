@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Friend";
+}
+<link href="~/Content/style.css" rel="stylesheet" type="text/css" />
+<div id="friends">
+    Friends(@ViewBag.countthisuserFriends):
+    <div id="friendstable">        
+        @for (int i =0;i<ViewBag.Friendsid.Count;i++) { 
+        <div class="friend">
+            <a href="#">
+            <table>
+                <tr>
+                    <td>
+                        <img src="@ViewBag.avatar[i]"></img></td><td cellpadding="30px">
+                            <form action="" method="post"><input type="submit" name="submit" value="@ViewBag.name[i]" /></form>
+                            <br>Answers: @ViewBag.countAnswers[i]	 &nbsp Followers: @ViewBag.countFriends[i]
+                    </td>                    
+                </tr>
+            </table>
+            </a>
+        </div>        
+        }
+    </div>
+
+
+</div>

@@ -13,16 +13,35 @@ namespace Stesnyashki.Controllers
         // GET: /User/
 
         public ActionResult Index()
-        {
+        {            
             return View();
         }
-
+        ShyMeContext Sh = new ShyMeContext();
         [HttpPost]
         public ActionResult Login(string email, string password)
         {
-            ViewBag.username = email;
-            ViewBag.pass = password;
-            return View("User");
+            User U = Sh.Users.Where(u => u.email == email).FirstOrDefault();
+            if (U == null) 
+            {
+                return View("SUser");
+            }
+            if (U.email != null)
+            {
+                if (U.password == password)
+                {
+                    Session["id"] = U.id;
+                    return View("User");
+                }
+                else
+                {
+                    ViewBag.password = "Email or password you entered is incorrect!";
+                    return View("../SHome/Index");
+                }
+            }
+            else
+            {              
+                return View("SUser");               
+            }
         }
 
         [HttpPost]
@@ -39,26 +58,11 @@ namespace Stesnyashki.Controllers
         [HttpPost]
         public ActionResult UpdateBg(int id, string newbg)//метод для update background в профиле пользователя made by Valera
         {
-            ShyMeContext Sh = new ShyMeContext();
+            
 
-            if (id == null)
-            {
-                return HttpNotFound();
-            }
-            else
-            {
                 User u = Sh.Users.Find(id);
-                if (u == null)
-                {
-                    return HttpNotFound();
-                }
-                else
-                {
-                    u.backgroundImage = newbg;
-
-                }
-            }
-            return View(User);
+               u.backgroundImage = newbg;
+            return View("User");
         }
 
         [HttpPost]
@@ -66,24 +70,13 @@ namespace Stesnyashki.Controllers
         {
             ShyMeContext Sh = new ShyMeContext();
 
-            if (id == null)
-            {
-                return HttpNotFound();
-            }
-            else
-            {
-                User u = Sh.Users.Find(id);
-                if (u == null)
-                {
-                    return HttpNotFound();
-                }
-                else
-                {
-                    // u.mude = mude;
 
-                }
-            }
-            return View(User);
+                User u = Sh.Users.Find(id);
+                // u.mude = mude;
+
+             
+            
+            return View("User");
         }
 
         [HttpPost]
@@ -91,19 +84,10 @@ namespace Stesnyashki.Controllers
         {
             ShyMeContext Sh = new ShyMeContext();
 
-            if (id == null)
-            {
-                return HttpNotFound();
-            }
-            else
-            {
+
+       
                 User u = Sh.Users.Find(id);
-                if (u == null)
-                {
-                    return HttpNotFound();
-                }
-                else
-                {
+              
                     u.name = persinfo[0];
                     u.surname = persinfo[1];
                     u.age = Convert.ToInt32(persinfo[2]);
@@ -113,11 +97,11 @@ namespace Stesnyashki.Controllers
                     u.password = persinfo[6];
                     u.avatar = persinfo[7];
                     u.isDataOpened = Convert.ToBoolean(persinfo[8]);
-                }
+                
 
-            }
+            
 
-            return View(User);
+            return View("User");
         }
 
 
@@ -126,70 +110,39 @@ namespace Stesnyashki.Controllers
         {
             ShyMeContext Sh = new ShyMeContext();
             bool b;
-            if (id == null)
-            {
-                return HttpNotFound();
-            }
-            else
-            {
+  
                 User u = Sh.Users.Find(id);
-                if (u == null)
-                {
-                    return HttpNotFound();
-                }
-                else
-                {
+             
+                
                     b = Convert.ToBoolean(u.isDataOpened);
                     if (b == true)
                     {
-                        return View(User);
+                        return View("User");
                     }
                     else
                     {
                         return HttpNotFound();
                     }
-                }
-            }
+                
+            
         }
 
-
         [HttpPost]
-        public ActionResult DeleteUser(int adminId, int id)//метод для удаления пользователя админом made by Valera
+        public string SetAvatarname(int id) //получаем директиву аватара,чтобы показать ее в профайле
         {
             ShyMeContext Sh = new ShyMeContext();
-            if (adminId == -1)
+            string s = "../Content/icon/avatar.png";
+            if (s == null)
             {
-
-                if (id == null)
-                {
-                    return HttpNotFound();
-                }
-                else
-                {
-
-                    foreach (Question q in Sh.Questions)
-                    {
-                        if (q.idResiver == id)
-                        {
-                            Sh.Questions.Remove(q);
-                            Sh.SaveChanges();
-                        }
-                    }
-                    User u = Sh.Users.Find(id);
-                    if (u != null)
-                    {
-                        Sh.Users.Remove(u);
-                        Sh.SaveChanges();
-                    }
-                }
-
+                return "Enter photo directory";
             }
             else
             {
-                return HttpNotFound();
+                User u = Sh.Users.Find(id);
+                s = u.avatar;
             }
-            return View(User);
-
+            return s;
         }
+        
     }
 }

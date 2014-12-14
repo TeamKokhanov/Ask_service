@@ -7,7 +7,10 @@
 <div id="wrapper">
     <div class="user-icon"></div>
     <div class="pass-icon"></div>
-
+    <input type="button" onclick="location.href='#'" class="vk-icon">
+    <input type="button" onclick="location.href='#'" class="fb-icon">
+    <input type="button" onclick="location.href='#'" class="tw-icon">
+    <input type="button" onclick="location.href='#'" class="go-icon">
     <form name="login-form" class="login-form" action="/SUser/Login" method="post">
 
         <div class="header">
@@ -28,12 +31,7 @@
             @*<input type="button" onclick="location.href='register.htm'" value="Sign up" class="register" />*@
         </div>
 
-    </form>
-    <form class="login-form" action="/Personal/PersonalReg" method="post">
-        <div class="footer">
-            <input type="submit" value="Sign up" class="register" />
-        </div>
-    </form>
+    </form>   
 </div>
 <div class="gradient"></div>
 
@@ -41,13 +39,19 @@
     $(document).ready(function () {
         $(".username").focus(function () {
             $(".user-icon").css("left", "-48px");
-        });
-        $(".username").blur(function () {
-            $(".user-icon").css("left", "0px");
+            $(".fb-icon").css("left", "-48px");
+            $(".tw-icon").css("left", "-48px");
+            $(".go-icon").css("left", "-48px");
+            $(".vk-icon").css("left", "-48px");
         });
 
         $(".password").focus(function () {
             $(".pass-icon").css("left", "-48px");
+            $(".user-icon").css("left", "0px");
+            $(".fb-icon").css("left", "0px");
+            $(".tw-icon").css("left", "0px");
+            $(".go-icon").css("left", "0px");
+            $(".vk-icon").css("left", "0px");
         });
         $(".password").blur(function () {
             $(".pass-icon").css("left", "0px");

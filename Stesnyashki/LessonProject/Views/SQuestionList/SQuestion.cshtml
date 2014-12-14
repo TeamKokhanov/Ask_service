@@ -2,7 +2,7 @@
     ViewBag.Title = "Question";
 }
 <link rel="stylesheet" type="text/css" href="~/Content/QuestionListStyle.css" />
-<div class="questionmaindiv">
+
     <h1>My QuestionList</h1>
     @if (ViewBag.Question.Count < 1) 
     {
@@ -11,32 +11,26 @@
     @for (int j = 0; j < ViewBag.Question.Count; j++)
     {
         <div class="centerquestiondiv">
-            <table>
+            <table class="fixed">
                 <tr>
-                    <td>
-                        Avatar
+                    <td width="15%">
+                        <img src="@ViewBag.avatar[j]" width="150" height="150"/>
                     </td>
-                    <td>
+                    <td width="80%">
                         <h1>Sender:@ViewBag.User[j]</h1>
+                    <br />
+                        <br />                                    
+                        @ViewBag.Question[j].qText
+                   <br />
+                        <a class="show-btn" href="javascript:void(0)" onclick="document.getElementById('@ViewBag.Question[j].id').style.display='block';document.getElementById('fade').style.display='block'">Answer</a>
                     </td>
-                    <td>
-                        <div class="deletebutton has-tip" data-tooltip aria-haspopup="true" title="Delete this question">
+                    <td width="5%">                        
                             <form method="post" action="/SQuestionList/Delete">
                                 <input type="hidden" name="id" value="@ViewBag.Question[j].id" />
-                                <input type="submit" name="" value="X">
-                            </form>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        @ViewBag.Question[j].qText
-                    </td>
-                    <br />
-                </tr>
-                <tr>
-                    <td>
-                        <a class="show-btn" href="javascript:void(0)" onclick="document.getElementById('@ViewBag.Question[j].id').style.display='block';document.getElementById('fade').style.display='block'">Answer</a>
+                                <div class="centererer">
+                                    <input type="submit" class="crossbutton" value="" title="Delete this Question" />
+                                </div>
+                            </form>                             
                     </td>
                 </tr>
             </table>
@@ -57,4 +51,3 @@
         
     }
     
-</div>

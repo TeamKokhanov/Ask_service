@@ -1,23 +1,44 @@
 ﻿@{
     ViewBag.Title = "Friend";
+    
 }
 <link href="~/Content/style.css" rel="stylesheet" type="text/css" />
 <div id="friends">
     Friends(@ViewBag.countthisuserFriends):
+    @if (ViewBag.countthisuserFriends==0) 
+    {
+        <h2>@ViewBag.nonefriends</h2>
+    }
     <div id="friendstable">        
         @for (int i =0;i<ViewBag.Friendsid.Count;i++) { 
-        <div class="friend">
-            <a href="#">
+        <div class="friend">            
             <table>
                 <tr>
                     <td>
-                        <img src="@ViewBag.avatar[i]"></img></td><td cellpadding="30px">
-                            <form action="" method="post"><input type="submit" name="submit" value="@ViewBag.name[i]" /></form>
+                        <img src="@ViewBag.avatar[i]"/>
+                    </td>
+                    <td cellpadding="30px">
+                       @* <a href="/SUser/User/@ViewBag.Friendsid[i]">@ViewBag.name[i]</a>*@
+                   @* @Html.RouteLink(@ViewBag.name[i], new { Controller = "SUser", Action = "AddtoPersonalform", id = ViewBag.Friendsid[i] });*@
+                    @*<a href="@Html.Action("AddtoPersonalform", "SUser", new { id=ViewBag.Friendsid[i]});">@ViewBag.name[i]</a>*@
+                   @*<a href="@Url.RouteUrl(new { controller = "SUser", action = "AddtoPersonalform", id = ViewBag.Friendsid[i] });">@ViewBag.name[i]</a>*@
+                        <form action="/SUser/RunUserWall" method="post">
+                            <input type="hidden" name="id" value="@ViewBag.Friendsid[i]" />
+                            <input type="submit" name="submit" value="@ViewBag.name[i]" class="link">
+
+                        </form>
                             <br>Answers: @ViewBag.countAnswers[i]	 &nbsp Followers: @ViewBag.countFriends[i]
-                    </td>                    
+                    </td> 
+                    <td>
+                        <form action="DeleteFollowers" method="post">
+                            <input type="hidden" name="id" value="@ViewBag.Friendsid[i]" />
+                            <div class="centererer">
+                                <input type="submit" class="crossbutton" value="" title="Unsubscribe" />
+                            </div>
+                        </form>
+                    </td>                   
                 </tr>
-            </table>
-            </a>
+            </table>            
         </div>        
         }
     </div>

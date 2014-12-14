@@ -21,12 +21,18 @@ namespace Stesnyashki
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );*/
+            //routes.MapRoute(
+            //    name: "User",
+            //    url: "SUser/User/{id}",
+            //    defaults: new { Controller = "SUser", Action = "AddtoPersonalform", id = UrlParameter.Optional }
+            //    );
 
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "SHome", action = "Index", id = UrlParameter.Optional }
             );
+            
 
             OAuthWebSecurity.RegisterClient(
        client: new VKontakteAuthenticationClient(

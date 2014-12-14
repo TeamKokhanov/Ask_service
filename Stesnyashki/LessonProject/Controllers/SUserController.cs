@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Stesnyashki.Models;
+using System.Data;
+using System.IO;
 
 namespace Stesnyashki.Controllers
 {
@@ -16,16 +18,28 @@ namespace Stesnyashki.Controllers
         {            
             return View();
         }
-        ShyMeContext Sh = new ShyMeContext();
+
+        ShyMeContext Sh = new ShyMeContext();       
         [HttpPost]
         public ActionResult Login(string email, string password)
         {
             User U = Sh.Users.Where(u => u.email == email).FirstOrDefault();
             if (U == null) 
             {
-                return View("SUser");
+                ViewBag.login = email;
+                ViewBag.password = password;
+                User UN = new User
+                {
+                    email = email,
+                    password = password,
+                };
+                Sh.Users.Add(UN);
+                Sh.SaveChanges();
+                UN = Sh.Users.Where(u => u.email == email).First();
+                Session["id"] = UN.id;
+                return AddtoPersonalform();
             }
-            if (U.email != null)
+            else
             {
                 if (U.password == password)
                 {
@@ -37,112 +51,102 @@ namespace Stesnyashki.Controllers
                     ViewBag.password = "Email or password you entered is incorrect!";
                     return View("../SHome/Index");
                 }
-            }
-            else
-            {              
-                return View("SUser");               
-            }
+            }           
         }
 
         [HttpPost]
-        public ActionResult Register(string name, string email, string password, string confirm)
+        public ActionResult Register(string name, string surname, string email, string oldpassword, string confirmpassword, string newpassword, string country, string group1,string group2,string mude,string age)
         {
             ViewBag.username = email;
-            if (password == confirm)
-                ViewBag.pass = password;
-            else
-                ViewBag.pass = "Passwords mismaatch!!!";
-            return View("User");
-        }
-
-        [HttpPost]
-        public ActionResult UpdateBg(int id, string newbg)//метод для update background в профиле пользователя made by Valera
-        {
-            
-
-                User u = Sh.Users.Find(id);
-               u.backgroundImage = newbg;
-            return View("User");
-        }
-
-        [HttpPost]
-        public ActionResult UpdateMude(int id, string mude)//метод для update статуса в профиле пользователя made by Valera
-        {
-            ShyMeContext Sh = new ShyMeContext();
-
-
-                User u = Sh.Users.Find(id);
-                // u.mude = mude;
-
-             
-            
-            return View("User");
-        }
-
-        [HttpPost]
-        public ActionResult UpdatePersonalInfo(int id, List<string> persinfo)//метод для update персональной информации в профиле пользователя made by Valera
-        {
-            ShyMeContext Sh = new ShyMeContext();
-
-
-       
-                User u = Sh.Users.Find(id);
-              
-                    u.name = persinfo[0];
-                    u.surname = persinfo[1];
-                    u.age = Convert.ToInt32(persinfo[2]);
-                    u.sex = Convert.ToBoolean(persinfo[3]);
-                    u.country = persinfo[4];
-                    u.email = persinfo[5];
-                    u.password = persinfo[6];
-                    u.avatar = persinfo[7];
-                    u.isDataOpened = Convert.ToBoolean(persinfo[8]);
-                
-
-            
-
-            return View("User");
-        }
-
-
-        [HttpPost]
-        public ActionResult GetPrivacy(int id)//метод для получения информация  о статусе профиля пользователя(открыт или закрыт для просмотра) made by Valera
-        {
-            ShyMeContext Sh = new ShyMeContext();
-            bool b;
-  
-                User u = Sh.Users.Find(id);
-             
-                
-                    b = Convert.ToBoolean(u.isDataOpened);
-                    if (b == true)
-                    {
-                        return View("User");
-                    }
-                    else
-                    {
-                        return HttpNotFound();
-                    }
-                
-            
-        }
-
-        [HttpPost]
-        public string SetAvatarname(int id) //получаем директиву аватара,чтобы показать ее в профайле
-        {
-            ShyMeContext Sh = new ShyMeContext();
-            string s = "../Content/icon/avatar.png";
-            if (s == null)
+            int id = Convert.ToInt32(Session["id"]);
+            User U = Sh.Users.Where(u => u.id ==id).FirstOrDefault();
+            if (oldpassword != "")
             {
-                return "Enter photo directory";
+                if (oldpassword == U.password && oldpassword != "" && newpassword == confirmpassword)
+                {
+                    U.password = newpassword;
+                }
+                else
+                {
+                    ViewBag.pass = "Passwords mismaatch!!!";
+                    return View("User");
+                }
             }
+            if (group1 == "Male")
+                U.sex = true;
             else
-            {
-                User u = Sh.Users.Find(id);
-                s = u.avatar;
-            }
-            return s;
+                U.sex = false;
+            if (country != "")
+                U.country = country;
+            if (age != "")
+                U.age = Convert.ToInt32(age);
+            U.name = name;
+            U.surname = surname;
+            U.status = mude;
+            U.id = Convert.ToInt32(Session["id"]);
+            if (group2 == "Open")
+                U.isDataOpened = false;
+            else U.isDataOpened = true;
+            Sh.Entry(U).State = EntityState.Modified;
+            Sh.SaveChanges();
+            return AddtoPersonalform();            
         }
-        
+        [HttpPost]
+        public ActionResult LoadAvatar(HttpPostedFileBase file)
+        {
+            // Verify that the user selected a file
+            if (file != null && file.ContentLength > 0)
+            {
+                // extract only the fielname
+                var fileName = Path.GetFileName(file.FileName);
+                // store the file inside ~/App_Data/uploads folder
+                var path = Path.Combine(Server.MapPath("~/Content/avatar"), fileName);
+                file.SaveAs(path);
+                User U = Sh.Users.Find(Convert.ToInt32(Session["id"]));
+                U.avatar ="/Content/avatar/"+ Convert.ToString(fileName);
+                Sh.Entry(U).State = EntityState.Modified;
+                Sh.SaveChanges();
+            }
+            
+            // redirect back to the index action to show the form once again
+            return AddtoPersonalform();
+        }
+
+        [HttpPost]
+        public ActionResult LoadBackpicture(HttpPostedFileBase file) 
+        {
+            // Verify that the user selected a file
+            if (file != null && file.ContentLength > 0)
+            {
+                // extract only the fielname
+                var fileName = Path.GetFileName(file.FileName);
+                // store the file inside ~/App_Data/uploads folder
+                var path = Path.Combine(Server.MapPath("~/Content/background"), fileName);
+                file.SaveAs(path);
+                User U = Sh.Users.Find(Convert.ToInt32(Session["id"]));
+                U.backgroundImage = "/Content/background/" + Convert.ToString(fileName);
+                Sh.Entry(U).State = EntityState.Modified;
+                Sh.SaveChanges();
+            }
+
+            // redirect back to the index action to show the form once again
+            return AddtoPersonalform();
+        }
+
+
+        [HttpPost]
+        public ActionResult AddtoPersonalform() 
+        {
+            User U = Sh.Users.Find(Convert.ToInt32(Session["id"]));
+            ViewBag.User = U;
+            
+            return View("SUser");
+        }
+        [HttpPost]
+        public ActionResult RunUserWall(int id) 
+        {
+            ViewBag.id = id;
+            return View("User");
+        }
     }
 }

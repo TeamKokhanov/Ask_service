@@ -22,12 +22,13 @@ namespace Stesnyashki.Controllers
         [HttpPost]
         public ActionResult QuestionList() 
         {
-            List<User> UB = Sh.Users.Where(b => b.id == 1).ToList();
+            int id = Convert.ToInt32(Session["id"]);
+            List<User> UB = Sh.Users.Where(b => b.id == id).ToList();
             foreach (var i in UB) 
             {
                 ViewBag.Background = i.backgroundImage;
             }
-            List<Question> QList = Sh.Questions.Where(q => q.idReciever == 1).ToList();
+            List<Question> QList = Sh.Questions.Where(q => q.idReciever == id).ToList();
             List<Question> Q = new List<Question>();
             foreach (var i in QList) 
             {
@@ -40,11 +41,23 @@ namespace Stesnyashki.Controllers
                 ViewBag.NullQuestion = "You don't have a question";
             ViewBag.Question = Q;
             List<string> NameList = new List<string>();
-            foreach(var i in QList)
+            List<string> avatar = new List<string>();
+            foreach(var i in Q)
             {
-                NameList.Add(Sh.Users.Find(i.idSender).name);
+                
+                if (i.anonymus)
+                {
+                    avatar.Add("/Content/anonymous.png");
+                    NameList.Add("Anonymous");
+                }
+                else
+                {
+                    avatar.Add(Sh.Users.Find(i.idSender).avatar);
+                    NameList.Add(Sh.Users.Find(i.idSender).name);
+                }
             }
             ViewBag.User = NameList;
+            ViewBag.avatar = avatar;
             return View("SQuestion");
         }
         [HttpPost]

@@ -1,38 +1,36 @@
 ﻿@{
-    ViewBag.Title = "User";
-    
-}
-
-
-    <form class="divcentre" action="" method="post">
-        <table class="divcentre">
-            <tr>
-                <td>
-                    <div>
-                        <table>
-                            <tr>
-                                <td>
-                                    <img src="images/avatar.png">
-                                    <p>Load your photo</p>
-                                </td>
-                                <td>
-                                    <input type="text" name="avatartext">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <p>Mude:</p>
-                                </td>
-                                <td>
-                                    <input type="text" name="mudetext">
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </td>
-                <td>
-                    <div>
-
+    ViewBag.Title = "User";    
+}    
+    <table class="divcentre">
+        <tr>
+            <td>
+                <div>
+                    <img src="@ViewBag.User.avatar" width="200" height="200"/>
+                    <table>                        
+                        <tr>
+                            <td>                                
+                                @using (Html.BeginForm("LoadAvatar", "SUser", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                                {
+                                    <div id="wrapper1">
+                                                <input type="file" name="file" id="File1" />
+                                            </div>     
+                                    <br/>
+                                         <br/>
+                                             <input type="submit" value="Upload" class="UploadButton" />                           
+                                   
+                                }                                
+                            </td>
+                            <td>
+                                
+                            </td>
+                        </tr>
+                        
+                    </table>
+                </div>
+            </td>
+            <td>
+                <div>
+                    <form class="divcentre" action="/SUser/Register" method="post">
                         <table>
                             <tr>
                                 <td>
@@ -44,7 +42,7 @@
                                     <p>Name:</p>
                                 </td>
                                 <td>
-                                    <input type="text" name="nametext">
+                                    <input type="text" name="name" placeholder="@ViewBag.User.name" class="g-button" />
                                 </td>
                             </tr>
                             <tr>
@@ -52,7 +50,7 @@
                                     <p>Surname:</p>
                                 </td>
                                 <td>
-                                    <input type="text" name="surnametext" />
+                                    <input type="text" name="surname" placeholder="@ViewBag.User.surname" class="g-button" />
                                 </td>
                             </tr>
                             <tr>
@@ -60,7 +58,7 @@
                                     <p>Age:</p>
                                 </td>
                                 <td>
-                                    <input type="text" name="agetext" />
+                                    <input type="text" name="age" placeholder="@ViewBag.User.age" class="g-button" />
                                 </td>
                             </tr>
                             <tr>
@@ -73,26 +71,42 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <p>E-mail:</p>
-                                </td>
-                                <td>
-                                    <input type="text" name="emailtext" />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
                                     <p>Country:</p>
                                 </td>
                                 <td>
-                                    <p><input type="text" name="country" /></p>
+                                    <input type="text" name="country" placeholder="@ViewBag.User.country" class="g-button" />
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <p>Password</p>
+                                    <p>E-mail:</p>
                                 </td>
                                 <td>
-                                    <input type="password" name="password" />
+                                    <p><input type="text" name="email" value="@ViewBag.User.email" class="g-button" /></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>Old Password</p>
+                                </td>
+                                <td>
+                                    <input type="password" name="oldpassword" placeholder="Old Password" class="g-button" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>New Password</p>
+                                </td>
+                                <td>
+                                    <input type="password" name="newpassword" placeholder="New Password" class="g-button" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>Confirm Password</p>
+                                </td>
+                                <td>
+                                    <input type="password" name="confirmpassword" placeholder="Confim Password" class="g-button" />
                                 </td>
                             </tr>
                             <tr>
@@ -105,22 +119,42 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <p>Background Image</p>
+                                    <p>Mude:</p>
                                 </td>
                                 <td>
-                                    <input type="text" name="backgroundimage" />
+                                    <input type="text" name="mudetext" placeholder="Enter what are you doing now." class="g-button" value="@ViewBag.User.status" />
                                 </td>
                             </tr>
+                           
                         </table>
+                        <div class="buttonsavepersonalinfo">
+                            <input class="regbutton" type="submit" name="Save" value="Save info" />
+                        </div>
+                    </form>
+                    
+                        <table>
+                            <tr>
+                                <td>
+                                @using (Html.BeginForm("LoadBackpicture", "SUser", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                                {
+                                    <div id="wrapper1">
+                                        <input type="file" name="file" id="File1" />
+                                    </div>
+                                   
+                                         <input type="submit" value="Upload" class="UploadButton" />                                
 
-                    </div>
-                </td>
-        </table>
+                                }
+                                    </td>
+                            </tr>
+                        </table>
+                   
+                    
+</div>
+            </td>
+    </table>
 
 
-        <div class="buttonsavepersonalinfo">
-            <input class="regbutton" type="submit" name="Save" value="Save info" />
-        </div>
-    </form>
+    
+
   
 

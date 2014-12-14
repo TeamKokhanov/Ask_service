@@ -22,7 +22,7 @@ namespace Stesnyashki.Controllers
         {
             int id = Convert.ToInt32(Session["id"]);
             SFriendsController SF = new SFriendsController();
-            List<User> UB = Sh.Users.Where(b => b.id == 1).ToList();// cookies id
+            List<User> UB = Sh.Users.Where(b => b.id == id).ToList();// cookies id
             User U = new User();
             string friendlist="";
             foreach (var i in UB) 
@@ -44,6 +44,11 @@ namespace Stesnyashki.Controllers
                 FriendList.Add(Convert.ToInt32(idfriends));
                 count = i + 1;
             }
+            if (FriendList == null) 
+            {
+                @ViewBag.nonefriends = "You don't have a friends!";
+                return View("SFriend");
+            }
             ViewBag.Friendsid = FriendList;
             List<string> name = new List<string>();
             List<string> avatar = new List<string>();
@@ -64,8 +69,41 @@ namespace Stesnyashki.Controllers
             ViewBag.avatar = avatar;
             ViewBag.countFriends = countFriends;
             ViewBag.countAnswers = countAnswers;
-            ViewBag.countthisuserFriends = SF.countFriends(1);//cookies id
+            ViewBag.countthisuserFriends = SF.countFriends(id);//cookies id
             return View("SFriend");
+        }
+
+        public ActionResult DeleteFollowers(int id) 
+        {
+            int idUser = Convert.ToInt32(Session["id"]);
+            User U = Sh.Users.Where(u => u.id == 1).FirstOrDefault();
+            string followers = U.friendlist;
+            List<int> FriendList = new List<int>();
+            followers += '#';
+            int count = 0;
+            while (followers[count] != '#')
+            {
+                int i = count;
+                string idfriends = "";
+                while (followers[i] != ';')
+                {
+                    idfriends += followers[i];
+                    i++;
+                }
+                FriendList.Add(Convert.ToInt32(idfriends));
+                count = i + 1;
+            }
+            FriendList.Remove(id);
+            followers = "";
+            foreach (var i in FriendList) 
+            {
+                followers += i;
+                followers += ';';
+            }
+            U.friendlist = followers;
+            Sh.Entry(U).State = EntityState.Modified;
+            Sh.SaveChanges();
+            return AllUserFriends();
         }
 
         private int countFriends(int id) 

@@ -7,11 +7,7 @@
 	margin:  auto;
 	position: relative;
 	z-index:5;
-	
-	background: #f3f3f3;
-	border: 1px solid #fff;
-	border-radius: 5px;
-	
+    border:0;	
 	box-shadow: 0 1px 3px rgba(0,0,0,0.5);
 	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
 	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
@@ -25,6 +21,32 @@
     border-radius: 5px;
 
 }
+.centererer {
+position: absolute;
+height: 26px;
+width: 26px;
+margin-top:-80px;
+margin-left:1%;
+}
+.crossbutton {
+    margin:0 auto; /* DIV по центру */ 
+background:url(cross.png); /* IMG - фон */ 
+width:60%; /* ширина DIV в процентах, подобранная по исходной ширине IMG */ 
+height:20px; /* исходная высота IMG */ 
+background-size:100% auto; /* размер фона */ 
+background-repeat:no-repeat; /* запрет на повторение фона */ 
+cursor:pointer;
+}
+    .crossbutton:hover {
+        margin:0 auto; /* DIV по центру */ 
+background:url(cross.png); /* IMG - фон */ 
+width:60%; /* ширина DIV в процентах, подобранная по исходной ширине IMG */ 
+height:20px; /* исходная высота IMG */ 
+background-size:100% auto; /* размер фона */ 
+background-repeat:no-repeat;
+    border: 0;
+outline: 0;
+    }
 
 .doubletd {
     width:20%;
@@ -74,7 +96,7 @@ text-align: right;
 	background: url(icon/envelope.png) center no-repeat;
 	z-index:1002;
 	position: relative;
-	margin: 10% auto;
+	margin: 0 auto;
 }
 /* формируем кнопку закрытия,
   ** размеры, положение на форме  */
@@ -263,4 +285,9 @@ input[type=text]:focus, .your-message:focus {
 	progid:DXImageTransform.Microsoft.dropshadow(OffX = 0,OffY = 1,Color = #80ffffff,Positive = true)";
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#ff8e9aa7,endColorstr=#ff7c8a98,GradientType=0)
 	progid:DXImageTransform.Microsoft.dropshadow(OffX = 0,OffY = 1,Color = #80ffffff,Positive = true);
+}
+
+.fixed {
+    width:100%;
+     table-layout: fixed;
 }

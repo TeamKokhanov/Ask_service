@@ -24,7 +24,32 @@ scrollbar-darkshadow-color: #000000;
 #hat ul li .hatButt:hover { font-size: 27px;}
 #hat ul {list-style:none;}
 
+.g-button {
+border:1px solid;
+font-size: 12px;
+padding: 5px 10px;
+-webkit-border-radius: 6px;
+-moz-border-radius: 6px;
+border-radius: 6px;
+border-color:rgba(25,255,25,.75);
+box-shadow:0 0 8px rgba(25,255,25,.5);
+-moz-box-shadow:0 0 8px rgba(25,255,25,.5);
+-webkit-box-shadow:0 0 8px rgba(25,255,25,.5);
+transition:border linear .2s,box-shadow linear .2s;
+-moz-transition:border linear .2s,-moz-box-shadow linear .2s;
+-webkit-transition:border linear .2s,-webkit-box-shadow linear;
 
+}
+.g-button:focus{ 
+outline:none;
+-webkit-border-radius: 6px;
+-moz-border-radius: 6px;
+border-radius: 6px;
+border-color:rgba(25,25,255,.75);
+box-shadow:0 0 8px rgba(25,25,255,.5);
+-moz-box-shadow:0 0 8px rgba(25,25,255,.5);
+-webkit-box-shadow:0 0 8px rgba(25,25,255,.5);
+}
 
 #friends{	
  font-family: Verdana, Arial, Helvetica, sans-serif; 
@@ -361,7 +386,7 @@ CONTENT
 	-webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.25);
 }
 
-.user-icon, .pass-icon {
+.user-icon, .pass-icon, .vk-icon, .fb-icon, .tw-icon, .go-icon {
 	width: 46px;
 	height: 47px;
 	display: block;
@@ -378,16 +403,45 @@ CONTENT
 
 .user-icon {
 	top:147px; /* Positioning fix for slide-in, got lazy to think up of simpler method. */
-	background: rgba(65,72,72,0.75) url(user-icon.png) no-repeat center;	
+	background: rgba(65,72,72,0.75) url(images/user-icon.png) no-repeat center;	
+}
+
+.fb-icon{
+	top:197px; /* Positioning fix for slide-in, got lazy to think up of simpler method. */
+	background: rgba(65,72,72,0.75) url(images/fb-icon.png) no-repeat center;	
+	cursor: pointer;
+}
+
+.tw-icon{
+	top:247px; /* Positioning fix for slide-in, got lazy to think up of simpler method. */
+	background: rgba(65,72,72,0.75) url(images/tw-icon.png) no-repeat center;	
+	cursor: pointer;
+}
+
+.go-icon{
+	top:297px; /* Positioning fix for slide-in, got lazy to think up of simpler method. */
+	background: rgba(65,72,72,0.75) url(images/go-icon.png) no-repeat center;	
+	cursor: pointer;
+}
+
+.vk-icon {
+	top:347px; /* Positioning fix for slide-in, got lazy to think up of simpler method. */
+	background: rgba(65,72,72,0.75) url(images/vk-icon.png) no-repeat center;	
+	cursor: pointer;
 }
 
 .pass-icon {
 	top:221px;
-	background: rgba(65,72,72,0.75) url(pass-icon.png) no-repeat center;
+	background: rgba(65,72,72,0.75) url(images/pass-icon.png) no-repeat center;
+}
+
+.pass-icon {
+	top:221px;
+	background: rgba(65,72,72,0.75) url(images/pass-icon.png) no-repeat center;
 }
 
 /* Animation */
-.input, .user-icon, .pass-icon, .button, .register {
+.input, .user-icon, .pass-icon, .button, .register, .vk-icon, .fb-icon, .tw-icon, .go-icon {
 	transition: all 0.5s;
 	-moz-transition: all 0.5s;
 	-webkit-transition: all 0.5s;
@@ -479,3 +533,196 @@ FOOTER
 	position: relative;
 	bottom: -1px;
 }
+/*Choose avatar button start*/
+        #File1
+        {
+            /*position: absolute;*/
+        }
+        .customFile
+        {
+            width: 219px;
+            margin-left: -140px;
+            cursor: default;
+            height: 21px;
+            z-index: 2;
+            filter: alpha(opacity: 0);
+            opacity: 0;
+        }
+        .fakeButton
+        {
+            position: absolute;
+            z-index: 1;
+            width: 85px;
+            height: 21px;
+            background: url(/Content/images_ch/button.jpg) no-repeat left top;
+            float: left;
+        }
+       
+        .blocker
+        {
+            position: absolute;
+            z-index: 3;
+            width: 150px;
+            height: 21px;
+            background: url(/Content/images_ch/transparent.gif);
+            margin-left: -155px;
+        }
+        #FileName
+        {
+            position: absolute;
+            height: 15px;
+            margin-left: 90px;
+            font-family: Verdana;
+            font-size: 8pt;
+            color: Gray;
+            margin-top: 2px;
+            padding-top: 1px;
+            padding-left: 19px;
+        }
+        #activeBrowseButton
+        {
+            background: url(/Content/images_ch/button_active.jpg) no-repeat left top;
+            display: none;
+        }
+        /*Choose avatar button finish*/
+
+        .UploadButton {
+display: inline-block;
+font-weight: bold;
+color: #fff;
+text-decoration: none;
+text-shadow: 0 -1px rgba(0,0,0,.5);
+user-select: none;
+padding: .7em 1.5em;
+border: 1px solid rgb(80,32,0);
+border-radius: 5px;
+outline: none;
+background: rgb(147,80,36) linear-gradient(rgb(106,58,26), rgb(147,80,36) 80%);
+box-shadow:
+0 6px rgb(86,38,6),
+0 3px 15px rgba(0,0,0,.4),
+inset 0 1px rgba(255,255,255,.3),
+inset 0 0 3px rgba(255,255,255,.5);
+transition: .2s;
+} 
+.UploadButton:hover {
+background: rgb(167,91,41) linear-gradient(rgb(126,69,31), rgb(167,91,41) 80%);
+}
+.UploadButton:active {
+background: rgb(120,63,25) linear-gradient(rgb(120,63,25) 20%, rgb(167,91,41));
+box-shadow:
+0 2px rgb(86,38,6),
+0 1px 6px rgba(0,0,0,.4),
+inset 0 1px rgba(255,255,255,.3),
+inset 0 0 3px rgba(255,255,255,.5);
+-webkit-transform: translate(0, 4px);
+transform: translate(0, 4px);
+}
+
+/*Close button*/
+.centererer {
+position: absolute;
+height: 26px;
+width: 26px;
+
+margin-top:-80px;
+margin-left:54%;
+}
+table.fixed {
+ width:100%;
+     table-layout: fixed;
+}
+.crossbutton {
+    margin:0 auto; /* DIV по центру */ 
+background:url(cross.png); /* IMG - фон */ 
+width:60%; /* ширина DIV в процентах, подобранная по исходной ширине IMG */ 
+height:20px; /* исходная высота IMG */ 
+background-size:100% auto; /* размер фона */ 
+background-repeat:no-repeat; /* запрет на повторение фона */ 
+cursor:pointer;
+}
+
+input.link {
+  /* Первые два свойства нужны чтобы убрать отступы в IE */
+  overflow: visible;
+  width: auto;
+ 
+  /* Убираем отступы */
+  margin: 0;
+  padding: 0;
+ 
+  /* Убираем все элементы оформления кнопки */
+  background: none;
+  border: none;
+ 
+  /* Обычный для ссылок курсор */
+  cursor: pointer;
+  font-size:xx-large;
+  color:#071a8e;
+}
+ 
+/* Ссылка обычно подчеркнута */
+input.link span {
+  color: #00f;
+  text-decoration: underline;
+}
+    input.link:hover {
+        color:#56c2e1;
+        border: 0;
+outline: 0;
+    }
+
+    /*Search button*/
+    #search {  
+  /* устанавливаем ширину формы, 
+  ** равную ширине поля ввода (183 + 37 + 15) */  
+  width: 235px;  
+  height: 29px;  
+}  
+  
+/* делаем инпуты плавающими, чтобы убрать лишние отступы, 
+** и отключаем бордюры */  
+#search input {  
+  float: left;  
+  border: none;  
+}  
+  
+/* стили для поля ввода */  
+#search .input {  
+  width: 183px;  
+  height: 28px;  
+  /* внутренний отступ справа (37px) делаем больше левого, 
+  ** т.к. там будет размещена кнопка отправки */  
+  padding: 0 37px 1px 15px;  
+  background: #EEE url(https://lh4.googleusercontent.com/-EllJnywnmlY/UAaKJYSYYMI/AAAAAAAABUU/IaRo-yUcRmc/s235/search.png) no-repeat;  
+  color: #555;  
+  font: 13px/28px Tahoma, Arial, sans-serif;  
+  outline: none;  
+}  
+  
+/* приходится использовать хак для FireFox 
+** для вертикального выравнивания текста, 
+** т.к. у него свои особые представления об этом */  
+@-moz-document url-prefix() {  
+  #search .input {  
+    height: 27px;  
+    padding-bottom: 2px;  
+  }  
+}  
+  
+
+  
+/* оформляем кнопку отправки */  
+#search .submit {  
+  width: 37px;  
+  height: 29px;  
+  cursor: pointer;  
+  
+  /* смещаем кнопку влево на собственную ширину, 
+  ** чтобы она оказалась над полем ввода */  
+  margin-left: -37px;  
+  background:none;
+  /* по-нормальному, здесь достаточно было бы указать background: none; 
+  ** но приходится указывать фон из-за бага в IE */  
+  /*background: url(dontexist.png);  */
+}  

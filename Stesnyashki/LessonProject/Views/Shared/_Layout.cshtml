@@ -19,7 +19,7 @@
                                 <input type="submit" name="submit" value="Stesnyashki" class="link">
                             </form>
                         </li>
-                        <li><form action="/SUser/RunUserWall" method="post">
+                        <li><form action="/SUser/RunUserWall/@Session["id"]" method="post">
                                 <input type="submit" name="submit" value="My Wall" class="link">
                             </form>
                         </li>
@@ -39,8 +39,8 @@
                             </form>
                         </li>
                         <li>
-                            <form action="" method="post" id="search">
-                                <input type="text" name="" value="поиск" onblur="if(this.value=='') this.value='Search';" onfocus="if(this.value=='Search') this.value='';" class="input" />
+                            <form action="/Search/Search" method="post" id="search">
+                                <input type="text" name="name" value="" placeholder="Enter name..." onblur="if(this.value=='') this.value='Search';" onfocus="if(this.value=='Search') this.value='';" class="input" />
                                 <input type="submit" name="" value="" class="submit" />
                             </form>
                         </li>

@@ -74,9 +74,9 @@ namespace Stesnyashki.Controllers
         }
 
         public ActionResult DeleteFollowers(int id) 
-        {
-            int idUser = Convert.ToInt32(Session["id"]);
-            User U = Sh.Users.Where(u => u.id == 1).FirstOrDefault();
+        {            
+            int thisuserid = Convert.ToInt32(Session["id"]);
+            User U = Sh.Users.Where(u => u.id == thisuserid).FirstOrDefault();
             string followers = U.friendlist;
             List<int> FriendList = new List<int>();
             followers += '#';

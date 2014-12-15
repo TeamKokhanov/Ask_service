@@ -30,7 +30,7 @@
                             <br>Answers: @ViewBag.countAnswers[i]	 &nbsp Followers: @ViewBag.countFriends[i]
                     </td> 
                     <td>
-                        <form action="DeleteFollowers" method="post">
+                        <form action="/SFriends/DeleteFollowers" method="post">
                             <input type="hidden" name="id" value="@ViewBag.Friendsid[i]" />
                             <div class="centererer">
                                 <input type="submit" class="crossbutton" value="" title="Unsubscribe" />

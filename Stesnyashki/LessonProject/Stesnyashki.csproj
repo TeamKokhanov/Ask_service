@@ -209,6 +209,7 @@
     <Compile Include="Controllers\SQuestionListController.cs" />
     <Compile Include="Controllers\SHomeController.cs" />
     <Compile Include="Controllers\SUserController.cs" />
+    <Compile Include="Controllers\SWallController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -254,6 +255,7 @@
     <Content Include="Content\images\tw-icon.png" />
     <Content Include="Content\images\user-icon.png" />
     <Content Include="Content\images\vk-icon.png" />
+    <Content Include="Content\Laika.bmp" />
     <Content Include="Content\opp.png" />
     <Content Include="Content\pass-icon.png" />
     <Content Include="Content\QuestionListStyle.css" />
@@ -287,6 +289,7 @@
     <Content Include="Content\themes\base\jquery.ui.theme.css" />
     <Content Include="Content\icon\vk.png" />
     <Content Include="Content\user-icon.png" />
+    <Content Include="Content\wallStyle.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <None Include="Scripts\jquery-1.6.2-vsdoc.js" />
@@ -333,6 +336,7 @@
     <Content Include="Views\SFriends\SFriend.cshtml" />
     <Content Include="Views\SUser\SUser.cshtml" />
     <Content Include="Views\Search\Search.cshtml" />
+    <Content Include="Views\SWall\UserWall.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\avatar\" />

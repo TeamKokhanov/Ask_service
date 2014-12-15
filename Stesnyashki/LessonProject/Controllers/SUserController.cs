@@ -43,8 +43,10 @@ namespace Stesnyashki.Controllers
             {
                 if (U.password == password)
                 {
+                    SWallController SW = new SWallController();
                     Session["id"] = U.id;
-                    return RunUserWall(U.id);
+                    Session["curId"] = U.id;
+                    return SW.GoToUserWall(U.id);
                 }
                 else
                 {

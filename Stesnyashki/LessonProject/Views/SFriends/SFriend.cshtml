@@ -22,7 +22,7 @@
                    @* @Html.RouteLink(@ViewBag.name[i], new { Controller = "SUser", Action = "AddtoPersonalform", id = ViewBag.Friendsid[i] });*@
                     @*<a href="@Html.Action("AddtoPersonalform", "SUser", new { id=ViewBag.Friendsid[i]});">@ViewBag.name[i]</a>*@
                    @*<a href="@Url.RouteUrl(new { controller = "SUser", action = "AddtoPersonalform", id = ViewBag.Friendsid[i] });">@ViewBag.name[i]</a>*@
-                        <form action="/SUser/RunUserWall" method="post">
+                        <form action="/SWall/GoToUserWall/@ViewBag.Friendsid[i]" method="get">
                             <input type="hidden" name="id" value="@ViewBag.Friendsid[i]" />
                             <input type="submit" name="submit" value="@ViewBag.name[i]" class="link">
 

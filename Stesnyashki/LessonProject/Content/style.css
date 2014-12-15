@@ -726,3 +726,18 @@ outline: 0;
   ** но приходится указывать фон из-за бага в IE */  
   /*background: url(dontexist.png);  */
 }  
+/*Search form*/
+.divcentre1
+{
+margin-left: 120%;
+    text-align:center;
+    height:50%;
+}
+.box1{
+width:90%;
+height: 89%;
+background:url(../images/background.jpg);
+ border-radius:15px 15px 15px 15px;
+ margin-top:250px;
+  margin: 0 auto;
+}

@@ -58,15 +58,22 @@
                                     <p>Age:</p>
                                 </td>
                                 <td>
-                                    <input type="text" name="age" placeholder="@ViewBag.User.age" class="g-button" />
+                                    <input type="number" name="age" placeholder="@ViewBag.User.age" class="g-button" />
                                 </td>
                             </tr>
                             <tr>
                                 <td>
                                     <p>Sex:</p>
                                 </td>
-                                <td>
-                                    <input type="radio" name="group1" value="Male" checked> Male<br>  <input type="radio" name="group1" value="Female"> Female<br>
+                                <td>@if (@ViewBag.User.sex) { 
+                                         <input type="radio" name="group1" value="Male"  checked><label>Male</label>  <br>  ;
+                                         <input type="radio" name="group1" value="Female"><label>Female</label><br>;
+                                    }
+                                    else
+                                    {
+                                        <input type="radio" name="group1" value="Male" ><label>Male</label>  <br>                                      ;
+                                         <input type="radio" name="group1" value="Female" checked><label>Female</label><br>;
+                                    }
                                 </td>
                             </tr>
                             <tr>
@@ -82,7 +89,7 @@
                                     <p>E-mail:</p>
                                 </td>
                                 <td>
-                                    <p><input type="text" name="email" value="@ViewBag.User.email" class="g-button" /></p>
+                                    <p><input type="email" name="email" value="@ViewBag.User.email" class="g-button" /></p>
                                 </td>
                             </tr>
                             <tr>
@@ -113,8 +120,15 @@
                                 <td>
                                     <p>Privacy</p>
                                 </td>
-                                <td>
-                                    <input type="radio" name="group2" value="Open" checked> Open<br>  <input type="radio" name="group2" value="Close"> Close<br>
+                                <td>@if (@ViewBag.User.isDataOpened) { 
+                                        <input type="radio" name="group2" value="Open" checked><label>Open</label><br>;  
+                                        <input type="radio" name="group2" value="Close"><label>Close</label><br>;
+                                    }
+                                    else
+                                    {
+                                        <input type="radio" name="group2" value="Open" ><label>Open</label><br>                                    ;
+                                        <input type="radio" name="group2" value="Close" checked><label>Close</label><br>;
+                                    }
                                 </td>
                             </tr>
                             <tr>
@@ -122,7 +136,7 @@
                                     <p>Mude:</p>
                                 </td>
                                 <td>
-                                    <input type="text" name="mudetext" placeholder="Enter what are you doing now." class="g-button" value="@ViewBag.User.status" />
+                                    <input type="text" name="mude" placeholder="Enter what are you doing now." class="g-button" value="@ViewBag.User.status" />
                                 </td>
                             </tr>
                            

@@ -204,8 +204,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\PreStartApp.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\SFriendsController.cs" />
-    <Compile Include="Controllers\SPersonalController.cs" />
     <Compile Include="Controllers\SQuestionListController.cs" />
     <Compile Include="Controllers\SHomeController.cs" />
     <Compile Include="Controllers\SUserController.cs" />
@@ -220,7 +220,6 @@
     <Compile Include="Models\ShyMeContext.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserWorker\FriendFolowerList.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\avatar.png" />
@@ -256,6 +255,7 @@
     <Content Include="Content\images\tw-icon.png" />
     <Content Include="Content\images\user-icon.png" />
     <Content Include="Content\images\vk-icon.png" />
+    <Content Include="Content\Laika.bmp" />
     <Content Include="Content\opp.png" />
     <Content Include="Content\pass-icon.png" />
     <Content Include="Content\QuestionListStyle.css" />
@@ -289,6 +289,7 @@
     <Content Include="Content\themes\base\jquery.ui.theme.css" />
     <Content Include="Content\icon\vk.png" />
     <Content Include="Content\user-icon.png" />
+    <Content Include="Content\wallStyle.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <None Include="Scripts\jquery-1.6.2-vsdoc.js" />
@@ -334,6 +335,8 @@
     <Content Include="Views\Shared\MainLayout.cshtml" />
     <Content Include="Views\SFriends\SFriend.cshtml" />
     <Content Include="Views\SUser\SUser.cshtml" />
+    <Content Include="Views\Search\Search.cshtml" />
+    <Content Include="Views\SWall\UserWall.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\avatar\" />

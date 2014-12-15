@@ -43,8 +43,10 @@ namespace Stesnyashki.Controllers
             {
                 if (U.password == password)
                 {
+                    SWallController SW = new SWallController();
                     Session["id"] = U.id;
-                    return View("User");
+                    Session["curId"] = U.id;
+                    return SW.GoToUserWall(U.id);
                 }
                 else
                 {
@@ -80,10 +82,12 @@ namespace Stesnyashki.Controllers
                 U.country = country;
             if (age != "")
                 U.age = Convert.ToInt32(age);
-            U.name = name;
-            U.surname = surname;
-            U.status = mude;
-            U.id = Convert.ToInt32(Session["id"]);
+            if(name!="")
+                 U.name = name;
+            if(surname!="")
+                U.surname = surname;
+            if(mude!="")
+                U.status = mude;           
             if (group2 == "Open")
                 U.isDataOpened = false;
             else U.isDataOpened = true;

@@ -15,7 +15,7 @@ namespace Stesnyashki.Models
 
         public DateTime date { get; set; }
 
-        public int like { get; set; }
+        public int likes { get; set; }
 
         public int idSender { get; set; }
     }

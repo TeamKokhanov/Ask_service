@@ -1,0 +1,53 @@
+﻿.smallAvatar{
+    height: 60px;
+    width:60px;
+
+}
+
+.bigAvatar{
+    height: 200px;
+    width: 200px;
+}
+
+.blockTable{
+    background-color:white;
+    align-self:center;
+    padding: 10px;
+    width:80%;
+    opacity:0.8;
+    border:1px solid black;
+}
+#questionBox{
+    margin:10px 30px 10px 30px;
+}
+
+#commentBox{
+    margin:10px 30px 10px 60px;    
+}
+
+.laika {
+    height:32px;
+    width:32px;
+}
+
+#_1{
+    width: 100px;
+}
+
+#_2{
+    width: 800px;
+}
+
+#3{
+    width: 70px;
+}
+
+
+
+
+/*TD, TH {
+    padding: 3px; 
+    border: 1px solid black; 
+   }
+*/
+    

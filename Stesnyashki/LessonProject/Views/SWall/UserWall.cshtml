@@ -1,0 +1,207 @@
+﻿@{
+    ViewBag.Title = "UserWall";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/wallStyle.css" rel="stylesheet" type="text/css" />
+
+
+@using Stesnyashki.Models
+@helper PersonalInfo(User u)
+{<div class="blockTable" id="questionBox">
+        <table>
+            <tr>
+                <td colspan="2">
+                    <h2>@(u.name.ToString()+" "+u.surname.ToString()+",  "+u.age)</h2>
+                </td>
+                <td></td>
+                <td rowspan="3" colspan="2">
+                    <input type="submit" value="Follow">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @if(u.isDataOpened)
+                    {
+                        <h4>@u.email</h4>
+                    }
+                </td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td rowspan ="4">
+                    <input class="bigAvatar" type="image" src=@u.avatar>
+                </td>
+                <td colspan="2" width="680px">
+                    <h3>@u.status</h3>
+                    </td>               
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td colspan="2" width="200">
+                    <h4>Sent questions: @ViewBag.StatQuestions</h4>
+                    <h4>Obtained Likes: @ViewBag.StatLikes</h4>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" rowspan="2">                  
+                        @if(u.isDataOpened)
+                        {
+                             if (u.sex)
+                             {
+                                <h4>Sex: male;</h4> 
+                             }
+                             else {
+                                  <h4> Sex: female;</h4> 
+                             }    
+                        }
+                        <h4>Country: @u.country;</h4>
+                    </td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>               
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+}
+
+
+
+@helper QuestionH(Question q, User u)
+{<div class="blockTable" id="questionBox">
+     <table>
+         <tr>
+             <td rowspan="4" id="_1">
+                 @if (!q.anonymus)
+                 {                    
+                     <input type="image" class="smallAvatar" src=u.avatar>
+                 }
+
+
+             </td>
+             <td id="_2">
+                 <h2>@q.qText</h2>
+             </td>  
+             <td>
+                 <a href="~/ololo/@q.id">kick</a> <!--TODO: Add Address of Support-->
+                 </td>       
+         </tr>
+         <tr>
+
+             <td colspan="2">
+                 @if (q.anonymus)
+                 {
+                     <h5>Anonyms</h5>
+                 }
+                 else
+                 {
+                     <h5>@u.name</h5>
+                 }
+             </td>
+         </tr>
+         <tr>
+             <td colspan="2">
+                 <h4>@q.aText</h4>
+             </td>
+         </tr>
+         <tr>
+             <td><h5>@q.aDate</h5></td>
+             <td>
+                 <a href="/SWall/likeQuestion/@q.id">
+                      <input class="laika" type="image" src="~/Content/Laika.bmp">
+                 </a>@q.likes
+             </td>
+
+         </tr>
+     </table>
+    </div>
+}
+
+@helper CommentH(Comment c, User u)
+{
+   <div class="blockTable" id="commentBox">
+       <table>
+           <tr>
+               <td id="_1" rowspan="3">
+                   <input type="image" class="smallAvatar" src=@u.avatar>
+               </td>
+               <td id="_2" colspan="2">
+                   <h3>@u.name</h3>
+               </td>           
+           </tr>
+           <tr >              
+               <td colspan="2">
+                   <h6>@c.text</h6>
+               </td>
+           </tr>
+           <tr>
+               <td><h5>@c.date</h5></td>
+               <td>
+                   <a href="/SWall/likeComment/@c.id">
+                       <input class="laika" type="image" src="~/Content/Laika.bmp">
+                   </a>@c.likes
+               </td>
+
+           </tr>
+       </table>
+  </div>
+}
+
+@helper askForm()
+{
+<form action="/SWall/ask" method="post">
+        <input type="text" name="qText" id="qText"/>
+        <input type="checkbox" name="anonymus" id="anonymus" value=" Anonymus"/>
+        <input type="submit" value="Ask" /> 
+    </form>
+}
+
+@helper commentForm(int qid)
+{
+    <form action="/SWall/addComment" method="post">
+        <input type="hidden" name="idQuestion" id="idQuestion" value=@qid />
+        <input type="text" name="text" id="text">
+        <input type="submit" value="Send" /> 
+    </form>
+}
+
+@PersonalInfo(ViewBag.CurUser)
+<p />
+
+@using (Html.BeginForm("ask", "SWall", FormMethod.Post))
+{
+    @Html.TextBox("qText");
+    @Html.CheckBox("anonymus",false);
+    <input type="submit" value="Ask">    
+}
+@{Html.EndForm();}
+
+@*@askForm()*@
+<p />
+
+@for(int i=0,j=0; i<ViewBag.QuestionList.Count; i++)
+{
+    @QuestionH(ViewBag.QuestionList[i], ViewBag.qUsers[i])
+    
+    if(j < ViewBag.CommentList.Count)
+    {
+        for (; j < ViewBag.CommentList.Count&&ViewBag.CommentList[j].idQuestion == ViewBag.QuestionList[i].id; j++)
+        {
+            @CommentH(ViewBag.CommentList[j], ViewBag.cUsers[j])
+        }
+    }
+    using (Html.BeginForm("addComment", "SWall", FormMethod.Post))
+    {
+        int qid = ViewBag.QuestionList[i].id;
+        @Html.TextBox("text");
+        @Html.Hidden("idQuestion", qid);
+        <input type="submit" value="Comment">
+    }
+    Html.EndForm();
+}
+

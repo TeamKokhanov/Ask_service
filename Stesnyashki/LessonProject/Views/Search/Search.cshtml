@@ -1,0 +1,97 @@
+﻿@{
+    ViewBag.Title = "Search";
+}
+
+
+    <table>
+        <tr>
+            <td>
+                <div id="friends">
+                    Found(@ViewBag.Result.Count):
+                    <div id="friendstable">
+                        @foreach (var i in ViewBag.Result) { 
+                        <div class="friend">
+                            <a href="#">
+                            <table>
+                                <tr>
+                                    <td>
+                                        @if (i.avatar != null || i.avatar != "") { 
+                                            <img src="@i.avatar" width="150" height="150"/>
+                                        }
+                                        else
+                                        {
+                                            <img src="~/Content/avatar.png" width="150" height="150" />
+                                        }
+                                    </td>
+                                     <td>
+                                         <form action="/SWall/GoToUserWall/@i.id" method="get">
+                                             <input type="hidden" name="id" value="@i.id" />
+                                             <input type="submit" name="submit" value="@i.name @i.surname" class="link">
+                                         </form>
+                                      </td>
+                                </tr>
+                            </table>
+                            </a>
+                        </div>
+                        }
+                    </div>
+
+
+                </div>
+            </td>
+            <td>
+                <form action="/Search/Search" method="post">
+                    <table class="divcentre1 box1">
+                        <tr>
+                        <tr>
+                            <td colspan="2">
+                                <h2>Search criterias:</h2>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Name:</p>
+                            </td>
+                            <td>
+                                <input type="text" name="name">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Surname:</p>
+                            </td>
+                            <td>
+                                <input type="text" name="surname" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Age:</p>
+                            </td>
+                            <td>
+                                <input type="number" name="age" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Sex:</p>
+                            </td>
+                            <td>
+                                <input type="radio" name="sex" value="Male" checked><label>Male</label>  <br>  
+                                <input type="radio" name="sex" value="Female"><label>Female</label><br>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Country:</p>
+                            </td>
+                            <td>
+                                <p><input type="text" name="country" /></p>
+                            </td>
+                        </tr>
+                    </table>
+                    <input type="submit" value="Search"/>
+                </form>
+</td>
+        </tr>
+    </table>

@@ -40,6 +40,10 @@ transition:border linear .2s,box-shadow linear .2s;
 -webkit-transition:border linear .2s,-webkit-box-shadow linear;
 
 }
+.askinput {
+width:80%;
+height:5%;
+}
 .g-button:focus{ 
 outline:none;
 -webkit-border-radius: 6px;
@@ -740,4 +744,8 @@ background:url(../images/background.jpg);
  border-radius:15px 15px 15px 15px;
  margin-top:250px;
   margin: 0 auto;
+}
+.searchbutton {
+margin-left:30%;
+padding:10px 0px;
 }

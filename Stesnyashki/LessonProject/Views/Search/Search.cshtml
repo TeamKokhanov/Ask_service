@@ -3,9 +3,9 @@
 }
 
 
-    <table>
+    <table class="fixed">
         <tr>
-            <td>
+            <td width="70%">
                 <div id="friends">
                     Found(@ViewBag.Result.Count):
                     <div id="friendstable">
@@ -39,9 +39,9 @@
 
                 </div>
             </td>
-            <td>
+            <td width="30%">
                 <form action="/Search/Search" method="post">
-                    <table class="divcentre1 box1">
+                    <table class=" box1">
                         <tr>
                         <tr>
                             <td colspan="2">
@@ -90,7 +90,9 @@
                             </td>
                         </tr>
                     </table>
-                    <input type="submit" value="Search"/>
+                    <div class="searchbutton">
+                            <input type="submit" value="Search" class="regbutton"/>
+                        </div>
                 </form>
 </td>
         </tr>

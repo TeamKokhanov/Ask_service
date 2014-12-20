@@ -15,7 +15,9 @@ namespace Stesnyashki.Controllers
         // GET: /User/
 
         public ActionResult Index()
-        {            
+        {
+            Session["id"] = 4;
+            Session["curId"] = 52;
             return View();
         }
 
@@ -37,6 +39,8 @@ namespace Stesnyashki.Controllers
                 Sh.SaveChanges();
                 UN = Sh.Users.Where(u => u.email == email).First();
                 Session["id"] = UN.id;
+              
+                
                 return AddtoPersonalform();
             }
             else
@@ -44,8 +48,7 @@ namespace Stesnyashki.Controllers
                 if (U.password == password)
                 {
                     SWallController SW = new SWallController();
-                    Session["id"] = U.id;
-                    Session["curId"] = U.id;
+                    Session["id"] = U.id;                    
                     return SW.GoToUserWall(U.id);
                 }
                 else

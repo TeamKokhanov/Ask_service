@@ -17,18 +17,13 @@ namespace Stesnyashki.Controllers
     {
         ShyMeContext sh = new ShyMeContext();
 
-
-        User cur = new User();
-
         [HttpGet]
         public ActionResult GoToUserWall(int id)
-        {
-            //int myId = Convert.ToInt32(Session["id"]);
-            User u = sh.Users.Find(id);
-
+        {            
+            User u = sh.Users.Find(id);            
             if (u != null)
             {
-               // Session["curId"] = id;
+                //Session["curId"] = u.id;
                 ViewBag.CurUser = u;
                 List<Question> query = sh.Questions.Where(q => q.idReciever == id).ToList();
                 List<Question> qList = new List<Question>();
@@ -94,7 +89,7 @@ namespace Stesnyashki.Controllers
                         q.likes -= 1;
                         sh.Entry(q).State = EntityState.Modified;
                         sh.SaveChanges();
-                        return GoToUserWall(Convert.ToInt32(Session["curId"])); //View("~/Views/Some/UserWall.cshtml");
+                        return/*Redirect(Request.UrlReferrer.ToString());*/GoToUserWall(Convert.ToInt32(Session["id"])); //View("~/Views/Some/UserWall.cshtml");
                     }
                 }
                 Like like = new Like();
@@ -107,7 +102,7 @@ namespace Stesnyashki.Controllers
                 q.likes += 1;
                 sh.Entry(q).State = EntityState.Modified;
                 sh.SaveChanges();
-                return GoToUserWall(Convert.ToInt32(Session["curId"])); //View("~/Views/Some/UserWall.cshtml");
+                return /*Redirect(Request.UrlReferrer.ToString()); */GoToUserWall(Convert.ToInt32(Session["id"])); //View("~/Views/Some/UserWall.cshtml");
             }
             return new HttpStatusCodeResult(404); //TODO: return some error page!!!
         }
@@ -136,7 +131,7 @@ namespace Stesnyashki.Controllers
                         c.likes -= 1;
                         sh.Entry(c).State = EntityState.Modified;
                         sh.SaveChanges();
-                        return GoToUserWall(Convert.ToInt32(Session["curId"]));//View("~/Views/Some/UserWall.cshtml");
+                        return /*Redirect(Request.UrlReferrer.ToString()); */GoToUserWall(Convert.ToInt32(Session["id"]));//View("~/Views/Some/UserWall.cshtml");
                     }
                 }
                 Like like = new Like();
@@ -149,7 +144,7 @@ namespace Stesnyashki.Controllers
                 c.likes += 1;
                 sh.Entry(c).State = EntityState.Modified;
                 sh.SaveChanges();
-                return GoToUserWall(Convert.ToInt32(Session["curId"])); //View("~/Views/Some/UserWall.cshtml");
+                return/* Redirect(Request.UrlReferrer.ToString());*/GoToUserWall(Convert.ToInt32(Session["id"])); //View("~/Views/Some/UserWall.cshtml");
             }
             return new HttpStatusCodeResult(404); //TODO: return some error page!!!
         }
@@ -164,7 +159,7 @@ namespace Stesnyashki.Controllers
             c.idSender = Convert.ToInt32(Session["id"]);
             sh.Comments.Add(c);
             sh.SaveChanges();
-            return GoToUserWall(Convert.ToInt32(Session["curId"]));
+            return GoToUserWall(49);
         }
 
 
@@ -180,12 +175,12 @@ namespace Stesnyashki.Controllers
         public ActionResult ask(Question q)
         {
             q.idSender = Convert.ToInt32(Session["id"]);
-            q.idReciever = Convert.ToInt32(Session["curId"]);
+            q.idReciever = 49;
             q.qDate = DateTime.Now;
             q.aText = null;
             q.aDate = Convert.ToDateTime("01.01.1753 00:00:00");
             SendQuestion(q, sh);
-            return GoToUserWall(Convert.ToInt32(Session["curId"]));
+            return Redirect(Request.UrlReferrer.ToString());
         }
 
         //--------------------------------------------------
@@ -225,6 +220,28 @@ namespace Stesnyashki.Controllers
         }
 
         //---------------------------------------
-
+        [HttpPost]
+        public ActionResult follow(int id) 
+        {
+            User U = sh.Users.Find(Convert.ToInt32(Session["id"]));
+            string followers = U.friendlist;
+            if (U.friendlist == null || U.friendlist == "")
+            {
+                U.friendlist += Convert.ToString(id) + ';';
+                sh.Entry(U).State = EntityState.Modified;
+                sh.SaveChanges();
+                return GoToUserWall(Convert.ToInt32(Session["id"]));
+            }
+            else 
+            {
+                U.friendlist += Convert.ToString(id) + ';';
+                sh.Entry(U).State = EntityState.Modified;
+                sh.SaveChanges();
+                return GoToUserWall(Convert.ToInt32(Session["id"]));
+            }
+            
+            return GoToUserWall(Convert.ToInt32(Session["id"])); 
+            
+        }
     }
 }

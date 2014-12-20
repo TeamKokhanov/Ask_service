@@ -1,0 +1,1 @@
+2014-12-17 20:42:13.9574|INFO|Stesnyashki.MvcApplication|Session End

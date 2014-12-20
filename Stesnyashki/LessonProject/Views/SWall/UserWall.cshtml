@@ -16,7 +16,10 @@
                 </td>
                 <td></td>
                 <td rowspan="3" colspan="2">
-                    <input type="submit" value="Follow">
+                    <form action="~/SWall/follow" method="post">
+                        <input type="hidden" name="id" value="@ViewBag.CurUser.id"/>
+                                                   <input type="submit" value="Follow">
+                        </form>
                 </td>
             </tr>
             <tr>
@@ -79,7 +82,7 @@
              <td rowspan="4" id="_1">
                  @if (!q.anonymus)
                  {                    
-                     <input type="image" class="smallAvatar" src=u.avatar>
+                     <input type="image" class="smallAvatar" src="@u.avatar">
                  }
 
 
@@ -155,8 +158,9 @@
 @helper askForm()
 {
 <form action="/SWall/ask" method="post">
-        <input type="text" name="qText" id="qText"/>
-        <input type="checkbox" name="anonymus" id="anonymus" value=" Anonymus"/>
+        <input type="text" name="qText" id="qText" class="g-button"/>
+    <br />
+        <input type="checkbox" name="anonymus" id="anonymus" value=" Anonymus"/><label>Anonymus</label>
         <input type="submit" value="Ask" /> 
     </form>
 }
@@ -175,9 +179,11 @@
 
 @using (Html.BeginForm("ask", "SWall", FormMethod.Post))
 {
-    @Html.TextBox("qText");
-    @Html.CheckBox("anonymus",false);
-    <input type="submit" value="Ask">    
+    <input type="text" name="qText" placeholder="Enter your question..." class="g-button askinput" />
+    @*@Html.TextBox("qText");*@
+    <br />
+    @Html.CheckBox("anonymus",false);<label>Anonymus</label>
+    <input type="submit" value="Ask" class="regbutton">
 }
 @{Html.EndForm();}
 
@@ -198,9 +204,10 @@
     using (Html.BeginForm("addComment", "SWall", FormMethod.Post))
     {
         int qid = ViewBag.QuestionList[i].id;
-        @Html.TextBox("text");
+        <input type="text" name="text" placeholder="Enter comment..." class="g-button"/>
+                       @*Html.TextBox("text");*@
         @Html.Hidden("idQuestion", qid);
-        <input type="submit" value="Comment">
+        <input type="submit" value="Comment" class="regbutton">
     }
     Html.EndForm();
 }

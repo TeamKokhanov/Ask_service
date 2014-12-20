@@ -66,7 +66,7 @@ namespace Stesnyashki.Controllers
                 }
             }
 
-            if (name != "")
+            if (name != ""&&name!=null)
             {
                 foreach (var a in U)//проход по листу по имени
                 {
@@ -82,7 +82,7 @@ namespace Stesnyashki.Controllers
             else
                 U1 = U;
 
-            if (surname != "")
+            if (surname != ""&&surname!=null)
             {
                 foreach (var z in U1)//проход по листу по фамилии
                 {
@@ -98,7 +98,7 @@ namespace Stesnyashki.Controllers
             else
                 U2 = U1;
 
-            if (age != "")
+            if (age != ""&&age!=null)
             {
                 foreach (var c in U2)//проход по листу по возрасту
                 {
@@ -113,7 +113,7 @@ namespace Stesnyashki.Controllers
             }
             else
                 U3 = U2;
-            if (sex != "")
+            if (sex != ""&&sex!=null)
             {
                 bool s = true;
                 if (sex == "Male")
@@ -134,7 +134,7 @@ namespace Stesnyashki.Controllers
             else
                 U4 = U3;
 
-            if (country != "")
+            if (country != ""&&country!=null)
             {
                 foreach (var e in U4)//проход по листу по стране
                 {
